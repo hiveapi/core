@@ -1,2 +1,2 @@
-# core
-HiveApi Core
+# HiveApi Core Package
+
