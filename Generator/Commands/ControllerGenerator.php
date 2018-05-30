@@ -1,9 +1,9 @@
 <?php
 
-namespace Apiato\Core\Generator\Commands;
+namespace HiveApi\Core\Generator\Commands;
 
-use Apiato\Core\Generator\GeneratorCommand;
-use Apiato\Core\Generator\Interfaces\ComponentsGenerator;
+use HiveApi\Core\Generator\GeneratorCommand;
+use HiveApi\Core\Generator\Interfaces\ComponentsGenerator;
 use Illuminate\Support\Pluralizer;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
@@ -21,7 +21,7 @@ class ControllerGenerator extends GeneratorCommand implements ComponentsGenerato
      *
      * @var string
      */
-    protected $name = 'apiato:generate:controller';
+    protected $name = 'hive:generate:controller';
 
     /**
      * The console command description.

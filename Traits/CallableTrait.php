@@ -1,10 +1,10 @@
 <?php
 
-namespace Apiato\Core\Traits;
+namespace HiveApi\Core\Traits;
 
-use Apiato\Core\Abstracts\Requests\Request;
-use Apiato\Core\Abstracts\Transporters\Transporter;
-use Apiato\Core\Foundation\Facades\Apiato;
+use HiveApi\Core\Abstracts\Requests\Request;
+use HiveApi\Core\Abstracts\Transporters\Transporter;
+use HiveApi\Core\Foundation\Facades\Hive;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
@@ -19,7 +19,7 @@ trait CallableTrait
 {
 
     /**
-     * This function will be called from anywhere (controllers, Actions,..) by the Apiato facade.
+     * This function will be called from anywhere (controllers, Actions,..) by the Hive facade.
      * The $class input will usually be an Action or Task.
      *
      * @param       $class
@@ -69,7 +69,7 @@ trait CallableTrait
      */
     private function resolveClass($class)
     {
-        // in case passing apiato style names such as containerName@classType
+        // in case passing hive style names such as containerName@classType
         if ($this->needsParsing($class)) {
 
             $parsedClass = $this->parseClassName($class);
@@ -77,14 +77,14 @@ trait CallableTrait
             $containerName = $this->capitalizeFirstLetter($parsedClass[0]);
             $className = $parsedClass[1];
 
-            Apiato::verifyContainerExist($containerName);
+            Hive::verifyContainerExist($containerName);
 
-            $class = $classFullName = Apiato::buildClassFullName($containerName, $className);
+            $class = $classFullName = Hive::buildClassFullName($containerName, $className);
 
-            Apiato::verifyClassExist($classFullName);
+            Hive::verifyClassExist($classFullName);
         } else {
-            if (Config::get('apiato.logging.log-wrong-apiato-caller-style', true)) {
-                Log::debug('It is recommended to use the apiato caller style (containerName@className) for ' . $class);
+            if (Config::get('hive.logging.log-wrong-hive-caller-style', true)) {
+                Log::debug('It is recommended to use the hive caller style (containerName@className) for ' . $class);
             }
         }
 
@@ -105,7 +105,7 @@ trait CallableTrait
     }
 
     /**
-     * If it's apiato Style caller like this: containerName@someClass
+     * If it's hive Style caller like this: containerName@someClass
      *
      * @param        $class
      * @param string $separator

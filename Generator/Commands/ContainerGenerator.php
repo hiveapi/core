@@ -1,9 +1,9 @@
 <?php
 
-namespace Apiato\Core\Generator\Commands;
+namespace HiveApi\Core\Generator\Commands;
 
-use Apiato\Core\Generator\GeneratorCommand;
-use Apiato\Core\Generator\Interfaces\ComponentsGenerator;
+use HiveApi\Core\Generator\GeneratorCommand;
+use HiveApi\Core\Generator\Interfaces\ComponentsGenerator;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -20,14 +20,14 @@ class ContainerGenerator extends GeneratorCommand implements ComponentsGenerator
      *
      * @var string
      */
-    protected $name = 'apiato:generate:container';
+    protected $name = 'hive:generate:container';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a Container for apiato from scratch';
+    protected $description = 'Create a Container for HiveApi from scratch';
 
     /**
      * The type of class being generated.
@@ -82,7 +82,7 @@ class ContainerGenerator extends GeneratorCommand implements ComponentsGenerator
         $_containerName = Str::lower($this->containerName);
 
         if ($ui == 'api' || $ui == 'both') {
-            $this->call('apiato:generate:container:api', [
+            $this->call('hive:generate:container:api', [
                 '--container'    => $containerName,
                 '--file'         => 'composer',
                 '--transporters' => $useTransporters,
@@ -90,7 +90,7 @@ class ContainerGenerator extends GeneratorCommand implements ComponentsGenerator
         }
 
         if ($ui == 'web' || $ui == 'both') {
-            $this->call('apiato:generate:container:web', [
+            $this->call('hive:generate:container:web', [
                 '--container'    => $containerName,
                 '--file'         => 'composer',
                 '--transporters' => $useTransporters,

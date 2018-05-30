@@ -1,8 +1,8 @@
 <?php
 
-namespace Apiato\Core\Loaders;
+namespace HiveApi\Core\Loaders;
 
-use Apiato\Core\Foundation\Facades\Apiato;
+use HiveApi\Core\Foundation\Facades\Hive;
 use File;
 
 /**
@@ -53,7 +53,7 @@ trait ConsolesLoaderTrait
 
                 // do not load route files
                 if (!$this->isRouteFile($consoleFile)) {
-                    $consoleClass = Apiato::getClassFullNameFromFile($consoleFile->getPathname());
+                    $consoleClass = Hive::getClassFullNameFromFile($consoleFile->getPathname());
 
                     // when user from the Main Service Provider, which extends Laravel
                     // service provider you get access to `$this->commands`

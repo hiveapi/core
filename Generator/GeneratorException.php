@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Generator;
+namespace HiveApi\Core\Generator;
 
 /**
  * Class GeneratorException

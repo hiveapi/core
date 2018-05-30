@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Providers;
+namespace HiveApi\Core\Abstracts\Providers;
 
 use Illuminate\Support\ServiceProvider as LaravelBroadcastServiceProvider;
 

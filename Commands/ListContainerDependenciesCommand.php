@@ -1,8 +1,8 @@
 <?php
 
-namespace Apiato\Core\Commands;
+namespace HiveApi\Core\Commands;
 
-use Apiato\Core\Transformers\ComposerTransformer;
+use HiveApi\Core\Transformers\ComposerTransformer;
 use App\Ship\Parents\Commands\ConsoleCommand;
 use Dotenv\Exception\InvalidPathException;
 use Exception;
@@ -13,16 +13,16 @@ use Spatie\Fractalistic\ArraySerializer;
 
 /**
  * Class FindContainerDependenciesCommand
- * Parses all files in the Container. This is needed due to the implemented apiato calls.
+ * Parses all files in the Container. This is needed due to the implemented hive calls.
  * It supports both $this->call(PATH/TO/FILE,... (by parsing imports)
- * as well as $Apiato::call('CONTAINER@FUNC',[args]...
+ * as well as $Hive::call('CONTAINER@FUNC',[args]...
  *
  * @author Fabian Widmann <fabian.widmann@gmail.com>
  */
 class ListContainerDependenciesCommand extends ConsoleCommand
 {
 
-    protected $signature = 'apiato:list:dependencies {containerPath}';
+    protected $signature = 'hive:list:dependencies {containerPath}';
 
     protected $description = 'Lists all dependencies from the given container to other containers.';
 
@@ -146,7 +146,7 @@ class ListContainerDependenciesCommand extends ConsoleCommand
      * @param $filePath string - path to the file
      * @return null | array of containers
      */
-    private function getContainerFromApiatoCall($filePath)
+    private function getContainerFromHiveCall($filePath)
     {
         $content = file_get_contents($filePath);
         //ignores everything that doesnt begin with spaces or tabs.
@@ -155,7 +155,7 @@ class ListContainerDependenciesCommand extends ConsoleCommand
         //group 3: parse functions (starting with one letter followed by alphanumeric letters
         //group 4: arguments inside of the square brackets
         //Examples @ http://www.phpliveregex.com/p/m8p
-        $pattern = "/^([^\/\/]*|[^\/\*]*)Apiato::call\('(?P<containers>.*?)@([?P<functions>a-zA-Z][a-zA-Z\d]*?)',.*?\[(?P<args>.*?)]/m";
+        $pattern = "/^([^\/\/]*|[^\/\*]*)Hive::call\('(?P<containers>.*?)@([?P<functions>a-zA-Z][a-zA-Z\d]*?)',.*?\[(?P<args>.*?)]/m";
         preg_match_all($pattern, $content, $matches);
         $ret = [];
 
@@ -191,16 +191,16 @@ class ListContainerDependenciesCommand extends ConsoleCommand
 
         foreach ($recursiveIteratorIterator as $file) {
             if (!$file->isDir()) {
-                $apiatoCalls = $this->getContainerFromApiatoCall($file->getPathName());
+                $hiveCalls = $this->getContainerFromHiveCall($file->getPathName());
                 $imports = $this->getContainerFromUseStatement($file->getPathName());
 
-                if (isset($apiatoCalls['containers'])) {
+                if (isset($hiveCalls['containers'])) {
                     if ($filterOwnContainer) {
-                        $apiatoCalls['containers'] = array_diff($apiatoCalls['containers'], [$ownContainerName]);
+                        $hiveCalls['containers'] = array_diff($hiveCalls['containers'], [$ownContainerName]);
                     }
 
-                    foreach ($apiatoCalls['containers'] as $container) {
-                        $filesInContainers['apiatoCalls'][$container][] = $file->getPathName();
+                    foreach ($hiveCalls['containers'] as $container) {
+                        $filesInContainers['hiveCalls'][$container][] = $file->getPathName();
                     }
                 }
 

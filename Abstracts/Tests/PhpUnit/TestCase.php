@@ -1,14 +1,14 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Tests\PhpUnit;
+namespace HiveApi\Core\Abstracts\Tests\PhpUnit;
 
-use Apiato\Core\Traits\HashIdTrait;
-use Apiato\Core\Traits\TestCaseTrait;
-use Apiato\Core\Traits\TestsTraits\PhpUnit\TestsAuthHelperTrait;
-use Apiato\Core\Traits\TestsTraits\PhpUnit\TestsMockHelperTrait;
-use Apiato\Core\Traits\TestsTraits\PhpUnit\TestsRequestHelperTrait;
-use Apiato\Core\Traits\TestsTraits\PhpUnit\TestsResponseHelperTrait;
-use Apiato\Core\Traits\TestsTraits\PhpUnit\TestsUploadHelperTrait;
+use HiveApi\Core\Traits\HashIdTrait;
+use HiveApi\Core\Traits\TestCaseTrait;
+use HiveApi\Core\Traits\TestsTraits\PhpUnit\TestsAuthHelperTrait;
+use HiveApi\Core\Traits\TestsTraits\PhpUnit\TestsMockHelperTrait;
+use HiveApi\Core\Traits\TestsTraits\PhpUnit\TestsRequestHelperTrait;
+use HiveApi\Core\Traits\TestsTraits\PhpUnit\TestsResponseHelperTrait;
+use HiveApi\Core\Traits\TestsTraits\PhpUnit\TestsUploadHelperTrait;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\RefreshDatabaseState;

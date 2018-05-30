@@ -1,8 +1,8 @@
 <?php
 
-namespace Apiato\Core\Commands;
+namespace HiveApi\Core\Commands;
 
-use Apiato\Core\Foundation\Facades\Apiato;
+use HiveApi\Core\Foundation\Facades\Hive;
 use App\Ship\Parents\Commands\ConsoleCommand;
 use File;
 use Symfony\Component\Console\Output\ConsoleOutput;
@@ -20,7 +20,7 @@ class ListTasksCommand extends ConsoleCommand
      *
      * @var string
      */
-    protected $signature = "apiato:list:tasks {--withfilename}";
+    protected $signature = "hive:list:tasks {--withfilename}";
 
     /**
      * The console command description.
@@ -46,7 +46,7 @@ class ListTasksCommand extends ConsoleCommand
      */
     public function handle()
     {
-        foreach (Apiato::getContainersNames() as $containerName) {
+        foreach (Hive::getContainersNames() as $containerName) {
 
             $this->console->writeln("<fg=yellow> [$containerName]</fg=yellow>");
 
@@ -68,7 +68,7 @@ class ListTasksCommand extends ConsoleCommand
                     $fileName = str_replace('.php', '', $fileName);
 
                     // uncamelize the word and replace it with spaces
-                    $fileName = Apiato::uncamelize($fileName);
+                    $fileName = Hive::uncamelize($fileName);
 
                     // check if flag exist
                     $includeFileName = '';

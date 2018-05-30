@@ -1,9 +1,9 @@
 <?php
 
-namespace Apiato\Core\Traits;
+namespace HiveApi\Core\Traits;
 
-use Apiato\Core\Abstracts\Repositories\Repository;
-use Apiato\Core\Exceptions\CoreInternalErrorException;
+use HiveApi\Core\Abstracts\Repositories\Repository;
+use HiveApi\Core\Exceptions\CoreInternalErrorException;
 use Prettus\Repository\Criteria\RequestCriteria;
 
 /**

@@ -1,8 +1,8 @@
 <?php
 
-namespace Apiato\Core\Loaders;
+namespace HiveApi\Core\Loaders;
 
-use Apiato\Core\Foundation\Facades\Apiato;
+use HiveApi\Core\Foundation\Facades\Hive;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
@@ -21,8 +21,8 @@ trait RoutesLoaderTrait
      */
     public function runRoutesAutoLoader()
     {
-        $containersPaths = Apiato::getContainersPaths();
-        $containersNamespace = Apiato::getContainersNamespace();
+        $containersPaths = Hive::getContainersPaths();
+        $containersNamespace = Hive::getContainersNamespace();
 
         foreach ($containersPaths as $containerPath) {
             $this->loadApiContainerRoutes($containerPath, $containersNamespace);
@@ -127,7 +127,7 @@ trait RoutesLoaderTrait
      */
     private function getApiUrl()
     {
-        return Config::get('apiato.api.url');
+        return Config::get('hive.api.url');
     }
 
     /**
@@ -137,7 +137,7 @@ trait RoutesLoaderTrait
      */
     private function getApiVersionPrefix($file)
     {
-        return Config::get('apiato.api.prefix') . (Config::get('apiato.api.enable_version_prefix') ? $this->getRouteFileVersionFromFileName($file) : '');
+        return Config::get('hive.api.prefix') . (Config::get('hive.api.enable_version_prefix') ? $this->getRouteFileVersionFromFileName($file) : '');
     }
 
     /**
@@ -158,8 +158,8 @@ trait RoutesLoaderTrait
     {
         $rateLimitMiddleware = null;
 
-        if (Config::get('apiato.api.throttle.enabled')) {
-            $rateLimitMiddleware = 'throttle:' . Config::get('apiato.api.throttle.attempts') . ',' . Config::get('apiato.api.throttle.expires');
+        if (Config::get('hive.api.throttle.enabled')) {
+            $rateLimitMiddleware = 'throttle:' . Config::get('hive.api.throttle.attempts') . ',' . Config::get('hive.api.throttle.expires');
         }
 
         return $rateLimitMiddleware;

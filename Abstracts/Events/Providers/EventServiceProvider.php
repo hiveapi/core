@@ -1,8 +1,8 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Events\Providers;
+namespace HiveApi\Core\Abstracts\Events\Providers;
 
-use Apiato\Core\Abstracts\Events\Dispatcher\Dispatcher;
+use HiveApi\Core\Abstracts\Events\Dispatcher\Dispatcher;
 use Illuminate\Contracts\Queue\Factory as QueueFactoryContract;
 
 /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Commands;
+namespace HiveApi\Core\Abstracts\Commands;
 
 use Illuminate\Console\Command as LaravelCommand;
 

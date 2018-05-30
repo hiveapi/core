@@ -1,22 +1,22 @@
 <?php
 
-namespace Apiato\Core\Foundation;
+namespace HiveApi\Core\Foundation;
 
-use Apiato\Core\Exceptions\ClassDoesNotExistException;
-use Apiato\Core\Exceptions\MissingContainerException;
-use Apiato\Core\Exceptions\WrongConfigurationsException;
-use Apiato\Core\Traits\CallableTrait;
+use HiveApi\Core\Exceptions\ClassDoesNotExistException;
+use HiveApi\Core\Exceptions\MissingContainerException;
+use HiveApi\Core\Exceptions\WrongConfigurationsException;
+use HiveApi\Core\Traits\CallableTrait;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 
 /**
- * Class Apiato
+ * Class Hive
  *
- * Helper Class to serve Apiato (Ship/Containers).
+ * Helper Class to serve Hive (Ship/Containers).
  *
  * @author  Mahmoud Zalt  <mahmoud@zalt.me>
  */
-class Apiato
+class Hive
 {
 
     use CallableTrait;
@@ -28,7 +28,7 @@ class Apiato
      */
     public function getContainersNamespace()
     {
-        return Config::get('apiato.containers.namespace');
+        return Config::get('hive.containers.namespace');
     }
 
     /**
@@ -211,7 +211,7 @@ class Apiato
      */
     public function getLoginWebPageName()
     {
-        $loginPage = Config::get('apiato.containers.login-page-url');
+        $loginPage = Config::get('hive.containers.login-page-url');
 
         if (is_null($loginPage)) {
             throw new WrongConfigurationsException();

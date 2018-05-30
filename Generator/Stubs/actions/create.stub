@@ -4,7 +4,7 @@ namespace App\Containers\{{container-name}}\Actions;
 
 use App\Ship\Parents\Actions\Action;
 use App\Ship\Parents\Requests\Request;
-use Apiato\Core\Foundation\Facades\Apiato;
+use HiveApi\Core\Foundation\Facades\Hive;
 
 class Create{{model}}Action extends Action
 {
@@ -14,7 +14,7 @@ class Create{{model}}Action extends Action
             // add your request data here
         ]);
 
-        ${{entity}} = Apiato::call('{{container-name}}@Create{{model}}Task', [$data]);
+        ${{entity}} = Hive::call('{{container-name}}@Create{{model}}Task', [$data]);
 
         return ${{entity}};
     }

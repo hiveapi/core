@@ -1,14 +1,14 @@
 <?php
 
-namespace Apiato\Core\Providers;
+namespace HiveApi\Core\Providers;
 
-use Apiato\Core\Abstracts\Events\Providers\EventServiceProvider;
-use Apiato\Core\Abstracts\Providers\MainProvider as AbstractMainProvider;
-use Apiato\Core\Foundation\Apiato;
-use Apiato\Core\Generator\GeneratorsServiceProvider;
-use Apiato\Core\Loaders\AutoLoaderTrait;
-use Apiato\Core\Loaders\FactoriesLoaderTrait;
-use Apiato\Core\Traits\ValidationTrait;
+use HiveApi\Core\Abstracts\Events\Providers\EventServiceProvider;
+use HiveApi\Core\Abstracts\Providers\MainProvider as AbstractMainProvider;
+use HiveApi\Core\Foundation\Hive;
+use HiveApi\Core\Generator\GeneratorsServiceProvider;
+use HiveApi\Core\Loaders\AutoLoaderTrait;
+use HiveApi\Core\Loaders\FactoriesLoaderTrait;
+use HiveApi\Core\Traits\ValidationTrait;
 use App\Ship\Parents\Providers\RoutesProvider;
 use App\Ship\Providers\ShipProvider;
 use Barryvdh\Cors\ServiceProvider as CorsServiceProvider;
@@ -23,14 +23,14 @@ use Vinkla\Hashids\Facades\Hashids;
 use Vinkla\Hashids\HashidsServiceProvider;
 
 /**
- * Class ApiatoProviders
+ * Class HiveApiProvider
  *
- * Does not have to extend from the Ship parent MainProvider since it's on the Core
- * it directly extends from the Abstract MainProvider.
+ * Does not have to extend from the Ship parent MainProvider since it is on the Core.
+ * It directly extends from the Abstract MainProvider.
  *
  * @author  Mahmoud Zalt  <mahmoud@zalt.me>
  */
-class ApiatoProvider extends AbstractMainProvider
+class HiveApiProvider extends AbstractMainProvider
 {
 
     use FactoriesLoaderTrait;
@@ -53,7 +53,7 @@ class ApiatoProvider extends AbstractMainProvider
         // add the Laravel Tinker Service Provider
         TinkerServiceProvider::class,
 
-        // Internal Apiato Providers:
+        // Internal HiveApi Providers:
         RoutesProvider::class, // exceptionally adding the Route Provider, unlike all other providers in the parents.
         ShipProvider::class, // the ShipProvider for the Ship third party packages.
         GeneratorsServiceProvider::class, // the code generator provider.
@@ -102,7 +102,7 @@ class ApiatoProvider extends AbstractMainProvider
 
         // Register Core Facade Classes, should not be registered in the alias property above, since they are used
         // by the auto-loading scripts, before the $aliases property is executed.
-        $this->app->alias(Apiato::class, 'Apiato');
+        $this->app->alias(Hive::class, 'Hive');
     }
 
     /**
@@ -113,7 +113,7 @@ class ApiatoProvider extends AbstractMainProvider
      */
     private function overrideLaravelBaseProviders()
     {
-        App::register(EventServiceProvider::class); //The custom apiato eventserviceprovider
+        App::register(EventServiceProvider::class); //The custom hive eventserviceprovider
     }
 
 }

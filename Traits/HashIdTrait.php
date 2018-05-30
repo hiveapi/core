@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Traits;
+namespace HiveApi\Core\Traits;
 
 use App\Ship\Exceptions\IncorrectIdException;
 use Illuminate\Support\Facades\Config;
@@ -42,7 +42,7 @@ trait HashIdTrait
         }
 
         // hash the ID only if hash-id enabled in the config
-        if (Config::get('apiato.hash-id')) {
+        if (Config::get('hive.hash-id')) {
             // we need to get the VALUE for this KEY (model field)
             $value = $this->getAttribute($field);
             return $this->encoder($value);
@@ -63,7 +63,7 @@ trait HashIdTrait
     {
 
         // the hash ID feature must be enabled to use this decoder feature.
-        if (Config::get('apiato.hash-id') && isset($this->decode) && !empty($this->decode)) {
+        if (Config::get('hive.hash-id') && isset($this->decode) && !empty($this->decode)) {
             // iterate over each key (ID that needs to be decoded) and call keys locator to decode them
             foreach ($this->decode as $key) {
                 $requestData = $this->locateAndDecodeIds($requestData, $key);
@@ -237,7 +237,7 @@ trait HashIdTrait
      */
     public function runHashedIdsDecoder()
     {
-        if (Config::get('apiato.hash-id')) {
+        if (Config::get('hive.hash-id')) {
             Route::bind('id', function ($id, $route) {
                 // skip decoding some endpoints
                 if (!in_array($route->uri(), $this->skippedEndpoints)) {

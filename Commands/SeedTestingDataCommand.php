@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Commands;
+namespace HiveApi\Core\Commands;
 
 use App\Ship\Parents\Commands\ConsoleCommand;
 
@@ -17,7 +17,7 @@ class SeedTestingDataCommand extends ConsoleCommand
      *
      * @var string
      */
-    protected $signature = "apiato:seed-test";
+    protected $signature = "hive:seed-test";
 
     /**
      * The console command description.

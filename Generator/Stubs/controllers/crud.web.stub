@@ -10,7 +10,7 @@ use App\Containers\{{container-name}}\UI\{{user-interface}}\Requests\Update{{mod
 use App\Containers\{{container-name}}\UI\{{user-interface}}\Requests\Store{{model}}Request;
 use App\Containers\{{container-name}}\UI\{{user-interface}}\Requests\Edit{{model}}Request;
 use App\Ship\Parents\Controllers\WebController;
-use Apiato\Core\Foundation\Facades\Apiato;
+use HiveApi\Core\Foundation\Facades\Hive;
 
 /**
  * Class {{class-name}}
@@ -26,7 +26,7 @@ class {{class-name}} extends WebController
      */
     public function index(GetAll{{models}}Request $request)
     {
-        ${{entities}} = Apiato::call('{{container-name}}@GetAll{{models}}Action', [$request]);
+        ${{entities}} = Hive::call('{{container-name}}@GetAll{{models}}Action', [$request]);
 
         // ..
     }
@@ -38,7 +38,7 @@ class {{class-name}} extends WebController
      */
     public function show(Find{{model}}ByIdRequest $request)
     {
-        ${{entity}} = Apiato::call('{{container-name}}@Find{{model}}ByIdAction', [$request]);
+        ${{entity}} = Hive::call('{{container-name}}@Find{{model}}ByIdAction', [$request]);
 
         // ..
     }
@@ -60,7 +60,7 @@ class {{class-name}} extends WebController
      */
     public function store(Store{{model}}Request $request)
     {
-        ${{entity}} = Apiato::call('{{container-name}}@Create{{model}}Action', [$request]);
+        ${{entity}} = Hive::call('{{container-name}}@Create{{model}}Action', [$request]);
 
         // ..
     }
@@ -72,7 +72,7 @@ class {{class-name}} extends WebController
      */
     public function edit(Edit{{model}}Request $request)
     {
-        ${{entity}} = Apiato::call('{{container-name}}@Get{{model}}ByIdAction', [$request]);
+        ${{entity}} = Hive::call('{{container-name}}@Get{{model}}ByIdAction', [$request]);
 
         // ..
     }
@@ -84,7 +84,7 @@ class {{class-name}} extends WebController
      */
     public function update(Update{{model}}Request $request)
     {
-        ${{entity}} = Apiato::call('{{container-name}}@Update{{model}}Action', [$request]);
+        ${{entity}} = Hive::call('{{container-name}}@Update{{model}}Action', [$request]);
 
         // ..
     }
@@ -96,7 +96,7 @@ class {{class-name}} extends WebController
      */
     public function delete(Delete{{model}}Request $request)
     {
-         $result = Apiato::call('{{container-name}}@Delete{{model}}Action', [$request]);
+         $result = Hive::call('{{container-name}}@Delete{{model}}Action', [$request]);
 
          // ..
     }

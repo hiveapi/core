@@ -1,9 +1,9 @@
 <?php
 
-namespace Apiato\Core\Generator\Commands;
+namespace HiveApi\Core\Generator\Commands;
 
-use Apiato\Core\Generator\GeneratorCommand;
-use Apiato\Core\Generator\Interfaces\ComponentsGenerator;
+use HiveApi\Core\Generator\GeneratorCommand;
+use HiveApi\Core\Generator\Interfaces\ComponentsGenerator;
 use Illuminate\Support\Pluralizer;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
@@ -21,7 +21,7 @@ class ModelGenerator extends GeneratorCommand implements ComponentsGenerator
      *
      * @var string
      */
-    protected $name = 'apiato:generate:model';
+    protected $name = 'hive:generate:model';
 
     /**
      * The console command description.
@@ -77,7 +77,7 @@ class ModelGenerator extends GeneratorCommand implements ComponentsGenerator
         if($repository) {
             // we need to generate a corresponding repository
             // so call the other command
-            $status = $this->call('apiato:generate:repository', [
+            $status = $this->call('hive:generate:repository', [
                 '--container' => $this->containerName,
                 '--file' => $this->fileName . 'Repository'
             ]);

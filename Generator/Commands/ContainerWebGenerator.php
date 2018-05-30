@@ -1,9 +1,9 @@
 <?php
 
-namespace Apiato\Core\Generator\Commands;
+namespace HiveApi\Core\Generator\Commands;
 
-use Apiato\Core\Generator\GeneratorCommand;
-use Apiato\Core\Generator\Interfaces\ComponentsGenerator;
+use HiveApi\Core\Generator\GeneratorCommand;
+use HiveApi\Core\Generator\Interfaces\ComponentsGenerator;
 use Illuminate\Support\Pluralizer;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
@@ -21,14 +21,14 @@ class ContainerWebGenerator extends GeneratorCommand implements ComponentsGenera
      *
      * @var string
      */
-    protected $name = 'apiato:generate:container:web';
+    protected $name = 'hive:generate:container:web';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a Container for apiato from scratch (WEB Part)';
+    protected $description = 'Create a Container for HiveApi from scratch (WEB Part)';
 
     /**
      * The type of class being generated.
@@ -88,21 +88,21 @@ class ContainerWebGenerator extends GeneratorCommand implements ComponentsGenera
 
         // add the README file
         $this->printInfoMessage('Generating README File');
-        $this->call('apiato:generate:readme', [
+        $this->call('hive:generate:readme', [
             '--container'   => $containerName,
             '--file'        => 'README',
         ]);
 
         // create the configuration file
         $this->printInfoMessage('Generating Configuration File');
-        $this->call('apiato:generate:configuration', [
+        $this->call('hive:generate:configuration', [
             '--container'   => $containerName,
             '--file'        => $_containerName,
         ]);
 
         // create the MainServiceProvider for the container
         $this->printInfoMessage('Generating MainServiceProvider');
-        $this->call('apiato:generate:serviceprovider', [
+        $this->call('hive:generate:serviceprovider', [
             '--container'   => $containerName,
             '--file'        => 'MainServiceProvider',
             '--stub'        => 'mainserviceprovider',
@@ -110,7 +110,7 @@ class ContainerWebGenerator extends GeneratorCommand implements ComponentsGenera
 
         // create the model and repository for this container
         $this->printInfoMessage('Generating Model and Repository');
-        $this->call('apiato:generate:model', [
+        $this->call('hive:generate:model', [
             '--container'   => $containerName,
             '--file'        => $model,
             '--repository'  => true,
@@ -118,7 +118,7 @@ class ContainerWebGenerator extends GeneratorCommand implements ComponentsGenera
 
         // create the migration file for the model
         $this->printInfoMessage('Generating a basic Migration file');
-        $this->call('apiato:generate:migration', [
+        $this->call('hive:generate:migration', [
             '--container'   => $containerName,
             '--file'        => 'create_' . Str::lower($_containerName) . '_tables',
             '--tablename'   => $models,
@@ -219,7 +219,7 @@ class ContainerWebGenerator extends GeneratorCommand implements ComponentsGenera
 
         foreach ($routes as $route)
         {
-            $this->call('apiato:generate:route', [
+            $this->call('hive:generate:route', [
                 '--container'   => $containerName,
                 '--file'        => $route['name'],
                 '--ui'          => $ui,
@@ -237,7 +237,7 @@ class ContainerWebGenerator extends GeneratorCommand implements ComponentsGenera
                 }
             }
 
-            $this->call('apiato:generate:request', [
+            $this->call('hive:generate:request', [
                 '--container'   => $containerName,
                 '--file'        => $route['request'],
                 '--ui'          => $ui,
@@ -246,7 +246,7 @@ class ContainerWebGenerator extends GeneratorCommand implements ComponentsGenera
             ]);
 
             if ($route['action'] != null || $route['stub'] != null) {
-                $this->call('apiato:generate:action', [
+                $this->call('hive:generate:action', [
                     '--container' => $containerName,
                     '--file' => $route['action'],
                     '--model' => $model,
@@ -255,7 +255,7 @@ class ContainerWebGenerator extends GeneratorCommand implements ComponentsGenera
             }
 
             if ($route['task'] != null || $route['stub'] != null) {
-                $this->call('apiato:generate:task', [
+                $this->call('hive:generate:task', [
                     '--container' => $containerName,
                     '--file' => $route['task'],
                     '--model' => $model,
@@ -266,7 +266,7 @@ class ContainerWebGenerator extends GeneratorCommand implements ComponentsGenera
 
         // finally generate the controller
         $this->printInfoMessage('Generating Controller to wire everything together');
-        $this->call('apiato:generate:controller', [
+        $this->call('hive:generate:controller', [
             '--container'   => $containerName,
             '--file'        => 'Controller',
             '--ui'          => $ui,

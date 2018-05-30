@@ -1,9 +1,9 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Providers;
+namespace HiveApi\Core\Abstracts\Providers;
 
-use Apiato\Core\Loaders\AliasesLoaderTrait;
-use Apiato\Core\Loaders\ProvidersLoaderTrait;
+use HiveApi\Core\Loaders\AliasesLoaderTrait;
+use HiveApi\Core\Loaders\ProvidersLoaderTrait;
 use Illuminate\Support\ServiceProvider as LaravelAppServiceProvider;
 
 /**

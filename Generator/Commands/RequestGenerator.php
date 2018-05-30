@@ -1,9 +1,9 @@
 <?php
 
-namespace Apiato\Core\Generator\Commands;
+namespace HiveApi\Core\Generator\Commands;
 
-use Apiato\Core\Generator\GeneratorCommand;
-use Apiato\Core\Generator\Interfaces\ComponentsGenerator;
+use HiveApi\Core\Generator\GeneratorCommand;
+use HiveApi\Core\Generator\Interfaces\ComponentsGenerator;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -20,7 +20,7 @@ class RequestGenerator extends GeneratorCommand implements ComponentsGenerator
      *
      * @var string
      */
-    protected $name = 'apiato:generate:request';
+    protected $name = 'hive:generate:request';
 
     /**
      * The console command description.
@@ -84,7 +84,7 @@ class RequestGenerator extends GeneratorCommand implements ComponentsGenerator
             $transporterClass = '\\App\\Containers\\' . $this->containerName . '\\Data\\Transporters\\' . $transporterName . '::class';
 
             // now create the Transporter
-            $this->call('apiato:generate:transporter', [
+            $this->call('hive:generate:transporter', [
                 '--container' => $this->containerName,
                 '--file' => $transporterName,
             ]);

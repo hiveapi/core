@@ -1,9 +1,9 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Controllers;
+namespace HiveApi\Core\Abstracts\Controllers;
 
-use Apiato\Core\Traits\CallableTrait;
-use Apiato\Core\Traits\HashIdTrait;
+use HiveApi\Core\Traits\CallableTrait;
+use HiveApi\Core\Traits\HashIdTrait;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;

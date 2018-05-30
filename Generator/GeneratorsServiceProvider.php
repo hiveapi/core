@@ -1,35 +1,35 @@
 <?php
 
-namespace Apiato\Core\Generator;
+namespace HiveApi\Core\Generator;
 
-use Apiato\Core\Generator\Commands\ActionGenerator;
-use Apiato\Core\Generator\Commands\ConfigurationGenerator;
-use Apiato\Core\Generator\Commands\ContainerApiGenerator;
-use Apiato\Core\Generator\Commands\ContainerGenerator;
-use Apiato\Core\Generator\Commands\ContainerWebGenerator;
-use Apiato\Core\Generator\Commands\ControllerGenerator;
-use Apiato\Core\Generator\Commands\EventGenerator;
-use Apiato\Core\Generator\Commands\EventHandlerGenerator;
-use Apiato\Core\Generator\Commands\ExceptionGenerator;
-use Apiato\Core\Generator\Commands\JobGenerator;
-use Apiato\Core\Generator\Commands\MailGenerator;
-use Apiato\Core\Generator\Commands\MigrationGenerator;
-use Apiato\Core\Generator\Commands\ModelGenerator;
-use Apiato\Core\Generator\Commands\NotificationGenerator;
-use Apiato\Core\Generator\Commands\ReadmeGenerator;
-use Apiato\Core\Generator\Commands\RepositoryGenerator;
-use Apiato\Core\Generator\Commands\RequestGenerator;
-use Apiato\Core\Generator\Commands\RouteGenerator;
-use Apiato\Core\Generator\Commands\SeederGenerator;
-use Apiato\Core\Generator\Commands\ServiceProviderGenerator;
-use Apiato\Core\Generator\Commands\SubActionGenerator;
-use Apiato\Core\Generator\Commands\TaskGenerator;
-use Apiato\Core\Generator\Commands\TestFunctionalTestGenerator;
-use Apiato\Core\Generator\Commands\TestTestCaseGenerator;
-use Apiato\Core\Generator\Commands\TestUnitTestGenerator;
-use Apiato\Core\Generator\Commands\TransformerGenerator;
-use Apiato\Core\Generator\Commands\TransporterGenerator;
-use Apiato\Core\Generator\Commands\ValueGenerator;
+use HiveApi\Core\Generator\Commands\ActionGenerator;
+use HiveApi\Core\Generator\Commands\ConfigurationGenerator;
+use HiveApi\Core\Generator\Commands\ContainerApiGenerator;
+use HiveApi\Core\Generator\Commands\ContainerGenerator;
+use HiveApi\Core\Generator\Commands\ContainerWebGenerator;
+use HiveApi\Core\Generator\Commands\ControllerGenerator;
+use HiveApi\Core\Generator\Commands\EventGenerator;
+use HiveApi\Core\Generator\Commands\EventHandlerGenerator;
+use HiveApi\Core\Generator\Commands\ExceptionGenerator;
+use HiveApi\Core\Generator\Commands\JobGenerator;
+use HiveApi\Core\Generator\Commands\MailGenerator;
+use HiveApi\Core\Generator\Commands\MigrationGenerator;
+use HiveApi\Core\Generator\Commands\ModelGenerator;
+use HiveApi\Core\Generator\Commands\NotificationGenerator;
+use HiveApi\Core\Generator\Commands\ReadmeGenerator;
+use HiveApi\Core\Generator\Commands\RepositoryGenerator;
+use HiveApi\Core\Generator\Commands\RequestGenerator;
+use HiveApi\Core\Generator\Commands\RouteGenerator;
+use HiveApi\Core\Generator\Commands\SeederGenerator;
+use HiveApi\Core\Generator\Commands\ServiceProviderGenerator;
+use HiveApi\Core\Generator\Commands\SubActionGenerator;
+use HiveApi\Core\Generator\Commands\TaskGenerator;
+use HiveApi\Core\Generator\Commands\TestFunctionalTestGenerator;
+use HiveApi\Core\Generator\Commands\TestTestCaseGenerator;
+use HiveApi\Core\Generator\Commands\TestUnitTestGenerator;
+use HiveApi\Core\Generator\Commands\TransformerGenerator;
+use HiveApi\Core\Generator\Commands\TransporterGenerator;
+use HiveApi\Core\Generator\Commands\ValueGenerator;
 use Illuminate\Support\ServiceProvider;
 
 /**

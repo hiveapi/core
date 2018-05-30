@@ -1,15 +1,15 @@
 <?php
 
-namespace Apiato\Core\Foundation\Facades;
+namespace HiveApi\Core\Foundation\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * Class Apiato
+ * Class Hive
  *
  * @author  Mahmoud Zalt  <mahmoud@zalt.me>
  */
-class Apiato extends Facade
+class Hive extends Facade
 {
 
     /**
@@ -19,7 +19,7 @@ class Apiato extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'Apiato';
+        return 'Hive';
     }
 
 }

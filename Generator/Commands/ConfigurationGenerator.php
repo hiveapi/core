@@ -1,9 +1,9 @@
 <?php
 
-namespace Apiato\Core\Generator\Commands;
+namespace HiveApi\Core\Generator\Commands;
 
-use Apiato\Core\Generator\GeneratorCommand;
-use Apiato\Core\Generator\Interfaces\ComponentsGenerator;
+use HiveApi\Core\Generator\GeneratorCommand;
+use HiveApi\Core\Generator\Interfaces\ComponentsGenerator;
 use Illuminate\Support\Str;
 
 /**
@@ -19,7 +19,7 @@ class ConfigurationGenerator extends GeneratorCommand implements ComponentsGener
      *
      * @var string
      */
-    protected $name = 'apiato:generate:configuration';
+    protected $name = 'hive:generate:configuration';
 
     /**
      * The console command description.

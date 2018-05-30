@@ -1,10 +1,10 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Transformers;
+namespace HiveApi\Core\Abstracts\Transformers;
 
-use Apiato\Core\Exceptions\CoreInternalErrorException;
-use Apiato\Core\Exceptions\UnsupportedFractalIncludeException;
-use Apiato\Core\Foundation\Facades\Apiato;
+use HiveApi\Core\Exceptions\CoreInternalErrorException;
+use HiveApi\Core\Exceptions\UnsupportedFractalIncludeException;
+use HiveApi\Core\Foundation\Facades\Hive;
 use ErrorException;
 use Exception;
 use Illuminate\Support\Facades\Config;
@@ -24,7 +24,7 @@ abstract class Transformer extends FractalTransformer
      */
     public function user()
     {
-        return Apiato::call('Authentication@GetAuthenticatedUserTask');
+        return Hive::call('Authentication@GetAuthenticatedUserTask');
     }
 
     /**
@@ -94,7 +94,7 @@ abstract class Transformer extends FractalTransformer
             return parent::callIncludeMethod($scope, $includeName, $data);
         }
         catch (ErrorException $exception) {
-            if (Config::get('apiato.requests.force-valid-includes', true)) {
+            if (Config::get('hive.requests.force-valid-includes', true)) {
                 throw new UnsupportedFractalIncludeException();
             }
         }

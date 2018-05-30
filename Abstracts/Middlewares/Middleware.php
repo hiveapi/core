@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Middlewares;
+namespace HiveApi\Core\Abstracts\Middlewares;
 
 /**
  * Class Middleware

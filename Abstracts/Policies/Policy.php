@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Policies;
+namespace HiveApi\Core\Abstracts\Policies;
 
 /**
  * Class Policy.

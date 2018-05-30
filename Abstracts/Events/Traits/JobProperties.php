@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Events\Traits;
+namespace HiveApi\Core\Abstracts\Events\Traits;
 
 /**
  * Created by PhpStorm.

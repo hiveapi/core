@@ -1,6 +1,6 @@
 {
-  "name": "apiato/{{_container-name}}",
-  "description": "{{container-name}} Container for apiato.",
+  "name": "hiveapi/{{_container-name}}",
+  "description": "{{container-name}} Container for HiveApi.",
   "require": {
   }
 }

@@ -1,9 +1,9 @@
 <?php
 
-namespace Apiato\Core\Traits;
+namespace HiveApi\Core\Traits;
 
-use Apiato\Core\Abstracts\Requests\Request;
-use Apiato\Core\Abstracts\Transporters\Transporter;
+use HiveApi\Core\Abstracts\Requests\Request;
+use HiveApi\Core\Abstracts\Transporters\Transporter;
 use App\Ship\Exceptions\InternalErrorException;
 
 /**

@@ -1,9 +1,9 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Events\Jobs;
+namespace HiveApi\Core\Abstracts\Events\Jobs;
 
-use Apiato\Core\Abstracts\Events\Interfaces\ShouldHandle;
-use Apiato\Core\Abstracts\Jobs\Job;
+use HiveApi\Core\Abstracts\Events\Interfaces\ShouldHandle;
+use HiveApi\Core\Abstracts\Jobs\Job;
 
 /**
  * Class EventJob
@@ -17,7 +17,7 @@ class EventJob extends Job
     /**
      * EventJob constructor.
      *
-     * @param \Apiato\Core\Abstracts\Events\Interfaces\ShouldHandle $handler
+     * @param \HiveApi\Core\Abstracts\Events\Interfaces\ShouldHandle $handler
      */
 
     public function __construct(ShouldHandle $handler)

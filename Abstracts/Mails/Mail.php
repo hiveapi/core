@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Mails;
+namespace HiveApi\Core\Abstracts\Mails;
 
 use Illuminate\Mail\Mailable;
 

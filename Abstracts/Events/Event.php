@@ -1,8 +1,8 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Events;
+namespace HiveApi\Core\Abstracts\Events;
 
-use Apiato\Core\Abstracts\Events\Traits\JobProperties;
+use HiveApi\Core\Abstracts\Events\Traits\JobProperties;
 
 /**
  * Class Event

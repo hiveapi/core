@@ -1,9 +1,9 @@
 <?php
 
-namespace Apiato\Core\Generator\Commands;
+namespace HiveApi\Core\Generator\Commands;
 
-use Apiato\Core\Generator\GeneratorCommand;
-use Apiato\Core\Generator\Interfaces\ComponentsGenerator;
+use HiveApi\Core\Generator\GeneratorCommand;
+use HiveApi\Core\Generator\Interfaces\ComponentsGenerator;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -20,7 +20,7 @@ class TestFunctionalTestGenerator extends GeneratorCommand implements Components
      *
      * @var string
      */
-    protected $name = 'apiato:generate:test:functional';
+    protected $name = 'hive:generate:test:functional';
 
     /**
      * The console command description.
@@ -78,7 +78,7 @@ class TestFunctionalTestGenerator extends GeneratorCommand implements Components
         $this->stubName = 'tests/functional/' . $ui . '.stub';
 
         // we need to generate the TestCase class before
-        $this->call('apiato:generate:test:testcase', [
+        $this->call('hive:generate:test:testcase', [
             '--container' => $this->containerName,
             '--file' => 'TestCase',
             '--ui' => $ui,

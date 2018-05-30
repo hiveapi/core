@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Actions;
+namespace HiveApi\Core\Abstracts\Actions;
 
 /**
  * Class SubAction.

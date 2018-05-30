@@ -1,9 +1,9 @@
 <?php
 
-namespace Apiato\Core\Generator\Commands;
+namespace HiveApi\Core\Generator\Commands;
 
-use Apiato\Core\Generator\GeneratorCommand;
-use Apiato\Core\Generator\Interfaces\ComponentsGenerator;
+use HiveApi\Core\Generator\GeneratorCommand;
+use HiveApi\Core\Generator\Interfaces\ComponentsGenerator;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -20,7 +20,7 @@ class TestTestCaseGenerator extends GeneratorCommand implements ComponentsGenera
      *
      * @var string
      */
-    protected $name = 'apiato:generate:test:testcase';
+    protected $name = 'hive:generate:test:testcase';
 
     /**
      * The console command description.
@@ -72,14 +72,14 @@ class TestTestCaseGenerator extends GeneratorCommand implements ComponentsGenera
      */
     public function getUserInputs()
     {
-        // we manually set the filename to TestCase as this is the preferred name within apiato
+        // we manually set the filename to TestCase as this is the preferred name within hive
         $this->fileName = 'TestCase';
 
         $ui = Str::lower($this->checkParameterOrChoice('ui', 'Select the UI for the controller', ['Generic', 'API', 'WEB', 'CLI'], 0));
 
         // we need to generate the generic testcase first!
         if ($ui != 'generic') {
-            $this->call('apiato:generate:test:testcase', [
+            $this->call('hive:generate:test:testcase', [
                 '--container' => $this->containerName,
                 '--file' => 'TestCase',
                 '--ui' => 'generic',

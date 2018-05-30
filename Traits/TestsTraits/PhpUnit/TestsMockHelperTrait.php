@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Traits\TestsTraits\PhpUnit;
+namespace HiveApi\Core\Traits\TestsTraits\PhpUnit;
 
 use App;
 use Mockery;

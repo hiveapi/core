@@ -1,9 +1,9 @@
 <?php
 
-namespace Apiato\Core\Generator\Commands;
+namespace HiveApi\Core\Generator\Commands;
 
-use Apiato\Core\Generator\GeneratorCommand;
-use Apiato\Core\Generator\Interfaces\ComponentsGenerator;
+use HiveApi\Core\Generator\GeneratorCommand;
+use HiveApi\Core\Generator\Interfaces\ComponentsGenerator;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
@@ -21,7 +21,7 @@ class TransformerGenerator extends GeneratorCommand implements ComponentsGenerat
      *
      * @var string
      */
-    protected $name = 'apiato:generate:transformer';
+    protected $name = 'hive:generate:transformer';
 
     /**
      * The console command description.

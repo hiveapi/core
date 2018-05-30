@@ -1,13 +1,13 @@
 <?php
 
-namespace Apiato\Core\Generator;
+namespace HiveApi\Core\Generator;
 
-use Apiato\Core\Generator\Exceptions\GeneratorErrorException;
-use Apiato\Core\Generator\Interfaces\ComponentsGenerator;
-use Apiato\Core\Generator\Traits\FileSystemTrait;
-use Apiato\Core\Generator\Traits\FormatterTrait;
-use Apiato\Core\Generator\Traits\ParserTrait;
-use Apiato\Core\Generator\Traits\PrinterTrait;
+use HiveApi\Core\Generator\Exceptions\GeneratorErrorException;
+use HiveApi\Core\Generator\Interfaces\ComponentsGenerator;
+use HiveApi\Core\Generator\Traits\FileSystemTrait;
+use HiveApi\Core\Generator\Traits\FormatterTrait;
+use HiveApi\Core\Generator\Traits\ParserTrait;
+use HiveApi\Core\Generator\Traits\PrinterTrait;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem as IlluminateFilesystem;
 use Illuminate\Support\Str;
@@ -109,7 +109,7 @@ abstract class GeneratorCommand extends Command
     /**
      * @void
      *
-     * @throws \Apiato\Core\Generator\Exceptions\GeneratorErrorException
+     * @throws \HiveApi\Core\Generator\Exceptions\GeneratorErrorException
      */
     public function handle()
     {
@@ -156,7 +156,7 @@ abstract class GeneratorCommand extends Command
     /**
      * @param $generator
      *
-     * @throws \Apiato\Core\Generator\Exceptions\GeneratorErrorException
+     * @throws \HiveApi\Core\Generator\Exceptions\GeneratorErrorException
      */
     private function validateGenerator($generator)
     {

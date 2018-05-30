@@ -1,8 +1,8 @@
 <?php
 
-namespace Apiato\Core\Loaders;
+namespace HiveApi\Core\Loaders;
 
-use Apiato\Core\Foundation\Facades\Apiato;
+use HiveApi\Core\Foundation\Facades\Hive;
 use File;
 use Illuminate\Support\Collection;
 
@@ -42,7 +42,7 @@ trait SeederLoaderTrait
 
         $containersDirectories = [];
 
-        foreach (Apiato::getContainersNames() as $containerName) {
+        foreach (Hive::getContainersNames() as $containerName) {
 
             $containersDirectories[] = base_path('app/Containers/' . $containerName . $this->seedersPath);
 
@@ -62,7 +62,7 @@ trait SeederLoaderTrait
 //        $seedersClasses = new Collection();
 //
 //        // it has to do it's own loop for now
-//        foreach (Apiato::getShipFoldersNames() as $portFolderName) {
+//        foreach (Hive::getShipFoldersNames() as $portFolderName) {
 //
 //            // Need to Loop over that Directory and load the any Seeder file there.
 //            $containersDirectories[] = base_path('app/Ship/Seeders/Tests');
@@ -94,7 +94,7 @@ trait SeederLoaderTrait
 
                         // do not seed the classes now, just store them in a collection and w
                         $seedersClasses->push(
-                            Apiato::getClassFullNameFromFile(
+                            Hive::getClassFullNameFromFile(
                                 $seederClass->getPathname())
                         );
                     }

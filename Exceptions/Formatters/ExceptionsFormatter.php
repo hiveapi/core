@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Exceptions\Formatters;
+namespace HiveApi\Core\Exceptions\Formatters;
 
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -100,7 +100,7 @@ abstract class ExceptionsFormatter extends HeimdalBaseFormatter
      */
     private function appendProfiler($data, $exception)
     {
-        if (config('apiato.api.debug')) {
+        if (config('hive.api.debug')) {
             $data = array_merge($data, [
                 'trace' => (string)$exception,
             ]);

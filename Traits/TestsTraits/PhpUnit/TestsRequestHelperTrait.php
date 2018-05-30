@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Traits\TestsTraits\PhpUnit;
+namespace HiveApi\Core\Traits\TestsTraits\PhpUnit;
 
 use App;
 use App\Ship\Exceptions\MissingTestEndpointException;
@@ -237,7 +237,7 @@ trait TestsRequestHelperTrait
             $uri = '/' . $uri;
         }
 
-        return Config::get('apiato.api.url') . $uri;
+        return Config::get('hive.api.url') . $uri;
     }
 
     /**
@@ -302,7 +302,7 @@ trait TestsRequestHelperTrait
      */
     private function hashEndpointId($id, $skipEncoding = false)
     {
-        return (Config::get('apiato.hash-id') && !$skipEncoding) ? Hashids::encode($id) : $id;
+        return (Config::get('hive.hash-id') && !$skipEncoding) ? Hashids::encode($id) : $id;
     }
 
     /**

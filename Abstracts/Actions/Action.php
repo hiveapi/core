@@ -1,9 +1,9 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Actions;
+namespace HiveApi\Core\Abstracts\Actions;
 
-use Apiato\Core\Traits\CallableTrait;
-use Apiato\Core\Traits\HasRequestCriteriaTrait;
+use HiveApi\Core\Traits\CallableTrait;
+use HiveApi\Core\Traits\HasRequestCriteriaTrait;
 
 /**
  * Class Action.

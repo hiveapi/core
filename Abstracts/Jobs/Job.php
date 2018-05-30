@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Jobs;
+namespace HiveApi\Core\Abstracts\Jobs;
 
 /**
  * Class Job

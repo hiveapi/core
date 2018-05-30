@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Repositories;
+namespace HiveApi\Core\Abstracts\Repositories;
 
 use Illuminate\Support\Facades\Config;
 use Prettus\Repository\Contracts\CacheableInterface as PrettusCacheable;
@@ -58,7 +58,7 @@ abstract class Repository extends PrettusRepository implements PrettusCacheable
     public function boot()
     {
         // only apply the RequestCriteria if config flag is set!
-        if (Config::get('apiato.requests.automatically-apply-request-criteria', true)) {
+        if (Config::get('hive.requests.automatically-apply-request-criteria', true)) {
             $this->pushCriteria(app(PrettusRequestCriteria::class));
         }
     }

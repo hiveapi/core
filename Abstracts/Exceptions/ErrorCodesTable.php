@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Exceptions;
+namespace HiveApi\Core\Abstracts\Exceptions;
 
 /**
  * Class ErrorCodesTable

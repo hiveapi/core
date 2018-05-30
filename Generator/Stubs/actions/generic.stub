@@ -3,12 +3,12 @@
 namespace App\Containers\{{container-name}}\Actions;
 
 use App\Ship\Parents\Actions\Action;
-use Apiato\Core\Foundation\Facades\Apiato;
+use HiveApi\Core\Foundation\Facades\Hive;
 
 class {{class-name}} extends Action
 {
     public function run()
     {
-        // $var = Apiato::call('Container@Task', [$arg1, $arg2, ...]);
+        // $var = Hive::call('Container@Task', [$arg1, $arg2, ...]);
     }
 }

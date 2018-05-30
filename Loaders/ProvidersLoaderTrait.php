@@ -1,8 +1,8 @@
 <?php
 
-namespace Apiato\Core\Loaders;
+namespace HiveApi\Core\Loaders;
 
-use Apiato\Core\Foundation\Facades\Apiato;
+use HiveApi\Core\Foundation\Facades\Hive;
 use App;
 use File;
 
@@ -45,9 +45,9 @@ trait ProvidersLoaderTrait
                 if (File::isFile($file)) {
 
                     // Check if this is the Main Service Provider
-                    if (Apiato::stringStartsWith($file->getFilename(), $mainServiceProviderNameStartWith)) {
+                    if (Hive::stringStartsWith($file->getFilename(), $mainServiceProviderNameStartWith)) {
 
-                        $serviceProviderClass = Apiato::getClassFullNameFromFile($file->getPathname());
+                        $serviceProviderClass = Hive::getClassFullNameFromFile($file->getPathname());
 
                         $this->loadProvider($serviceProviderClass);
                     }

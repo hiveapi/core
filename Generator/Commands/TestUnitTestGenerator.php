@@ -1,9 +1,9 @@
 <?php
 
-namespace Apiato\Core\Generator\Commands;
+namespace HiveApi\Core\Generator\Commands;
 
-use Apiato\Core\Generator\GeneratorCommand;
-use Apiato\Core\Generator\Interfaces\ComponentsGenerator;
+use HiveApi\Core\Generator\GeneratorCommand;
+use HiveApi\Core\Generator\Interfaces\ComponentsGenerator;
 use Illuminate\Support\Str;
 
 /**
@@ -19,7 +19,7 @@ class TestUnitTestGenerator extends GeneratorCommand implements ComponentsGenera
      *
      * @var string
      */
-    protected $name = 'apiato:generate:test:unit';
+    protected $name = 'hive:generate:test:unit';
 
     /**
      * The console command description.
@@ -71,7 +71,7 @@ class TestUnitTestGenerator extends GeneratorCommand implements ComponentsGenera
     public function getUserInputs()
     {
         // we need to generate the TestCase class before
-        $this->call('apiato:generate:test:testcase', [
+        $this->call('hive:generate:test:testcase', [
             '--container' => $this->containerName,
             '--file' => 'TestCase',
             '--ui' => 'generic',

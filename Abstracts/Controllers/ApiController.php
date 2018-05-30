@@ -1,8 +1,8 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Controllers;
+namespace HiveApi\Core\Abstracts\Controllers;
 
-use Apiato\Core\Traits\ResponseTrait;
+use HiveApi\Core\Traits\ResponseTrait;
 
 /**
  * Class ApiController.

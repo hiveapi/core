@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Seeders;
+namespace HiveApi\Core\Abstracts\Seeders;
 
 use Illuminate\Database\Seeder as LaravelSeeder;
 

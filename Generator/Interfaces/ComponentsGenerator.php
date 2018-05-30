@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Generator\Interfaces;
+namespace HiveApi\Core\Generator\Interfaces;
 
 /**
  * Class ComponentsGenerator

@@ -1,9 +1,9 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Transporters;
+namespace HiveApi\Core\Abstracts\Transporters;
 
-use Apiato\Core\Abstracts\Requests\Request;
-use Apiato\Core\Traits\SanitizerTrait;
+use HiveApi\Core\Abstracts\Requests\Request;
+use HiveApi\Core\Traits\SanitizerTrait;
 use Dto\Dto;
 use Dto\RegulatorInterface;
 use Illuminate\Support\Str;
@@ -75,7 +75,7 @@ abstract class Transporter extends Dto
     }
 
     /**
-     * Override the __GET function to gain more control and flexibility in Apiato, and modify the default behavior
+     * Override the __GET function to gain more control and flexibility in Hive, and modify the default behavior
      * of the parent function.
      *
      * @param $name

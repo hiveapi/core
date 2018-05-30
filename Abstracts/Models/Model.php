@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Models;
+namespace HiveApi\Core\Abstracts\Models;
 
 use Illuminate\Database\Eloquent\Model as LaravelEloquentModel;
 

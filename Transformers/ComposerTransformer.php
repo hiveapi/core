@@ -1,8 +1,8 @@
 <?php
 
-namespace Apiato\Core\Transformers;
+namespace HiveApi\Core\Transformers;
 
-use Apiato\Core\Abstracts\Transformers\Transformer;
+use HiveApi\Core\Abstracts\Transformers\Transformer;
 use stdClass;
 
 /**

@@ -1,9 +1,9 @@
 <?php
 
-namespace Apiato\Core\Generator\Commands;
+namespace HiveApi\Core\Generator\Commands;
 
-use Apiato\Core\Generator\GeneratorCommand;
-use Apiato\Core\Generator\Interfaces\ComponentsGenerator;
+use HiveApi\Core\Generator\GeneratorCommand;
+use HiveApi\Core\Generator\Interfaces\ComponentsGenerator;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -20,7 +20,7 @@ class EventGenerator extends GeneratorCommand implements ComponentsGenerator
      *
      * @var string
      */
-    protected $name = 'apiato:generate:event';
+    protected $name = 'hive:generate:event';
 
     /**
      * The console command description.
@@ -79,7 +79,7 @@ class EventGenerator extends GeneratorCommand implements ComponentsGenerator
         if($handler) {
             // we need to generate a corresponding handler
             // so call the other command
-            $status = $this->call('apiato:generate:eventhandler', [
+            $status = $this->call('hive:generate:eventhandler', [
                 '--container' => $this->containerName,
                 '--file' => $this->fileName . 'Handler',
                 '--event' => $this->fileName

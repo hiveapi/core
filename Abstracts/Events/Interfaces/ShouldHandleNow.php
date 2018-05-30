@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Events\Interfaces;
+namespace HiveApi\Core\Abstracts\Events\Interfaces;
 
 /**
  * Interface  ShouldHandleNow

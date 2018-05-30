@@ -1,8 +1,8 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Tasks;
+namespace HiveApi\Core\Abstracts\Tasks;
 
-use Apiato\Core\Traits\HasRequestCriteriaTrait;
+use HiveApi\Core\Traits\HasRequestCriteriaTrait;
 
 /**
  * Class Task.

@@ -1,9 +1,9 @@
 <?php
 
-namespace Apiato\Core\Generator\Commands;
+namespace HiveApi\Core\Generator\Commands;
 
-use Apiato\Core\Generator\GeneratorCommand;
-use Apiato\Core\Generator\Interfaces\ComponentsGenerator;
+use HiveApi\Core\Generator\GeneratorCommand;
+use HiveApi\Core\Generator\Interfaces\ComponentsGenerator;
 use Illuminate\Support\Str;
 
 /**
@@ -19,7 +19,7 @@ class TransporterGenerator extends GeneratorCommand implements ComponentsGenerat
      *
      * @var string
      */
-    protected $name = 'apiato:generate:transporter';
+    protected $name = 'hive:generate:transporter';
 
     /**
      * The console command description.

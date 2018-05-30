@@ -1,8 +1,8 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Providers;
+namespace HiveApi\Core\Abstracts\Providers;
 
-use Apiato\Core\Loaders\RoutesLoaderTrait;
+use HiveApi\Core\Loaders\RoutesLoaderTrait;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as LaravelRouteServiceProvider;
 
 /**

@@ -1,10 +1,10 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Events\Dispatcher;
+namespace HiveApi\Core\Abstracts\Events\Dispatcher;
 
-use Apiato\Core\Abstracts\Events\Interfaces\ShouldHandle;
-use Apiato\Core\Abstracts\Events\Interfaces\ShouldHandleNow;
-use Apiato\Core\Abstracts\Events\Jobs\EventJob;
+use HiveApi\Core\Abstracts\Events\Interfaces\ShouldHandle;
+use HiveApi\Core\Abstracts\Events\Interfaces\ShouldHandleNow;
+use HiveApi\Core\Abstracts\Events\Jobs\EventJob;
 use Illuminate\Events\Dispatcher as EventDispatcher;
 use Illuminate\Foundation\Bus\PendingDispatch as JobDispatcher;
 

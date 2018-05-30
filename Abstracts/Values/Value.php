@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Values;
+namespace HiveApi\Core\Abstracts\Values;
 
 /**
  * Class Value.

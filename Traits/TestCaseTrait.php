@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Traits;
+namespace HiveApi\Core\Traits;
 
 use Artisan;
 use Laravel\Passport\ClientRepository;

@@ -1,12 +1,12 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Requests;
+namespace HiveApi\Core\Abstracts\Requests;
 
-use Apiato\Core\Abstracts\Transporters\Transporter;
-use Apiato\Core\Exceptions\UndefinedTransporterException;
-use Apiato\Core\Traits\HashIdTrait;
-use Apiato\Core\Traits\SanitizerTrait;
-use Apiato\Core\Traits\StateKeeperTrait;
+use HiveApi\Core\Abstracts\Transporters\Transporter;
+use HiveApi\Core\Exceptions\UndefinedTransporterException;
+use HiveApi\Core\Traits\HashIdTrait;
+use HiveApi\Core\Traits\SanitizerTrait;
+use HiveApi\Core\Traits\StateKeeperTrait;
 use App;
 use App\Containers\Authentication\Tasks\GetAuthenticatedUserTask;
 use App\Containers\User\Models\User;
@@ -68,7 +68,7 @@ abstract class Request extends LaravelRequest
         $user = $user ? : $this->user();
 
         if ($user) {
-            $autoAccessRoles = Config::get('apiato.requests.allow-roles-to-access-all-routes');
+            $autoAccessRoles = Config::get('hive.requests.allow-roles-to-access-all-routes');
             // there are some roles defined that will automatically grant access
             if (!empty($autoAccessRoles)) {
                 $hasAutoAccessByRole = $user->hasAnyRole($autoAccessRoles);

@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Generator\Traits;
+namespace HiveApi\Core\Generator\Traits;
 
 use Exception;
 

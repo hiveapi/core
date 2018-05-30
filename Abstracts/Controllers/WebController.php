@@ -1,6 +1,6 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Controllers;
+namespace HiveApi\Core\Abstracts\Controllers;
 
 /**
  * Class WebController.

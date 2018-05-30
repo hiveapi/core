@@ -1,8 +1,8 @@
 <?php
 
-namespace Apiato\Core\Abstracts\Providers;
+namespace HiveApi\Core\Abstracts\Providers;
 
-use Apiato\Core\Loaders\MiddlewaresLoaderTrait;
+use HiveApi\Core\Loaders\MiddlewaresLoaderTrait;
 
 /**
  * Class MiddlewareProvider
