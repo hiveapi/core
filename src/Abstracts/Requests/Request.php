@@ -268,19 +268,6 @@ abstract class Request extends LaravelRequest
     }
 
     /**
-     * This method mimics the $request->input() method but works on the "decoded" values
-     *
-     * @param $key
-     * @param $default
-     *
-     * @return mixed
-     */
-    public function getInputByKey($key = null, $default = null)
-    {
-        return data_get($this->all(), $key, $default);
-    }
-
-    /**
      * Returns the Transporter (if correctly set)
      *
      * @return string

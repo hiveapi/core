@@ -16,6 +16,19 @@ trait SanitizerTrait
 {
 
     /**
+     * This method mimics the $request->input() method but works on the "decoded" values
+     *
+     * @param null $key
+     * @param null $default
+     *
+     * @return  mixed
+     */
+    public function getInputByKey($key = null, $default = null)
+    {
+        return array_get($this->getData(), $key, $default);
+    }
+
+    /**
      * Sanitizes the data of a request. This is a superior version of php built-in array_filter() as it preserves
      * FALSE and NULL values as well.
      *

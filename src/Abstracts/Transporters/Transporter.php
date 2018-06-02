@@ -50,19 +50,6 @@ abstract class Transporter extends Dto
     }
 
     /**
-     * This method mimics the $request->input() method but works on the "decoded" values
-     *
-     * @param null $key
-     * @param null $default
-     *
-     * @return  mixed
-     */
-    public function getInputByKey($key = null, $default = null)
-    {
-        return array_get($this->toArray(), $key, $default);
-    }
-
-    /**
      * Since passing Objects does not work, because they cannot be hydrated by the DTO.
      * This gives us the ability to pass instances, via the DTO.
      *
