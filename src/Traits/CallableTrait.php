@@ -37,7 +37,7 @@ trait CallableTrait
 
         $this->callExtraMethods($class, $extraMethodsToCall);
 
-        // detects Requests arguments "usually sent by controllers", and cvoert them to Transporters.
+        // detects Requests arguments "usually sent by controllers", and convert them to Transporters.
         $runMethodArguments = $this->convertRequestsToTransporters($class, $runMethodArguments);
 
         return $class->run(...$runMethodArguments);

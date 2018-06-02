@@ -28,7 +28,7 @@ class SanitizerTest extends \Codeception\Test\Unit
 
     protected function _before()
     {
-        $this->transporter = new \HiveApi\CoreTest\Models\TestTransporter($this->testdata);
+        $this->transporter = new \HiveApi\CoreTest\Models\SanitizerTest\TestTransporter($this->testdata);
     }
 
     protected function _after()
@@ -122,13 +122,5 @@ class SanitizerTest extends \Codeception\Test\Unit
         $data = $data['data']['items'];
 
         $this->tester->assertEquals($this->testdata['data']['items'], $data);
-    }
-
-    /**
-     * @test
-     */
-    public function sanitizeWithWildcards()
-    {
-        // todo
     }
 }
