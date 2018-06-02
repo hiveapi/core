@@ -33,7 +33,7 @@
   },
   "autoload": {
     "psr-4": {
-      "HiveApi\\Core\\": ""
+      "HiveApi\\Core\\": "src/"
     }
   },
   "autoload-dev": {

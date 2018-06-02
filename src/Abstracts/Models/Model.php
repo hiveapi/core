@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model as LaravelEloquentModel;
  *
  * @author  Mahmoud Zalt <mahmoud@zalt.me>
  */
-abstract class Model extends LaravelEloquentModel
+abstract class Model extends LaravelEloquentModel implements GenericModelContract
 {
 
 }

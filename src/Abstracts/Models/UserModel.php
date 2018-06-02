@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\User as LaravelAuthenticatableUser;
  *
  * @author  Mahmoud Zalt <mahmoud@zalt.me>
  */
-abstract class UserModel extends LaravelAuthenticatableUser
+abstract class UserModel extends LaravelAuthenticatableUser implements GenericModelContract
 {
 
 }
