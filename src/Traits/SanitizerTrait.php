@@ -4,7 +4,7 @@ namespace HiveApi\Core\Traits;
 
 use HiveApi\Core\Abstracts\Requests\Request;
 use HiveApi\Core\Abstracts\Transporters\Transporter;
-use App\Ship\Exceptions\InternalErrorException;
+use HiveApi\Core\Exceptions\CoreInternalErrorException;
 
 /**
  * Class SanitizerTrait.
@@ -55,7 +55,7 @@ trait SanitizerTrait
 
     /**
      * @return array
-     * @throws InternalErrorException
+     * @throws CoreInternalErrorException
      */
     private function getData()
     {
@@ -65,7 +65,7 @@ trait SanitizerTrait
         } elseif ($this instanceof Request) {
             $data = $this->all();
         } else {
-            throw new InternalErrorException('Unsupported class type for sanitization.');
+            throw new CoreInternalErrorException('Unsupported class type for sanitization.');
         }
 
         return $data;
