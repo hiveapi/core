@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Containers\{{container-name}}\Tests\Tests;
+
+use App\Containers\{{container-name}}\Tests\Tests\UnitTester;
+
+/**
+ * @group   {{_container-name}}
+ * @group   unit
+ */
+class {{class-name}}Cest
+{
+    protected function _before()
+    {
+    }
+
+    protected function _after()
+    {
+    }
+
+    /**
+     * @test
+     *
+     * @param UnitTester $I
+     */
+    public function test_something(UnitTester $I)
+    {
+        $I->assertEquals(true, true);
+    }
+
+}

@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Containers\{{container-name}}\Tests\Tests;
+
+use App\Containers\{{container-name}}\Tests\Tests\AcceptanceTester;
+
+/**
+ * @group   {{_container-name}}
+ * @group   acceptance
+ */
+class {{class-name}}Cest
+{
+    public function _before(AcceptanceTester $I)
+    {
+    }
+
+    public function _after(AcceptanceTester $I)
+    {
+    }
+
+    /**
+     * @param AcceptanceTester $I
+     */
+    public function test_something(AcceptanceTester $I)
+    {
+        $I->amOnPage('/');
+
+        $I->assertEquals(true, true);
+    }
+
+}

@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Containers\{{container-name}}\Tests\Tests;
+
+use App\Containers\{{container-name}}\Tests\Tests\ApiTester;
+
+/**
+ * @group   {{_container-name}}
+ * @group   api
+ */
+class {{class-name}}Cest
+{
+    protected function _before()
+    {
+    }
+
+    protected function _after()
+    {
+    }
+
+    /**
+     * @test
+     *
+     * @param ApiTester $I
+     */
+    public function test_something(ApiTester $I)
+    {
+        $I->haveHttpHeader('accept', 'application/json');
+        $I->sendGET('/');
+
+        $I->seeResponseCodeIs(200);
+    }
+
+}
