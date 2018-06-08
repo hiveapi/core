@@ -26,8 +26,8 @@ use HiveApi\Core\Generator\Commands\ServiceProviderGenerator;
 use HiveApi\Core\Generator\Commands\SubActionGenerator;
 use HiveApi\Core\Generator\Commands\TaskGenerator;
 use HiveApi\Core\Generator\Commands\TestFunctionalTestGenerator;
-use HiveApi\Core\Generator\Commands\TestSuiteConfigGenerator;
 use HiveApi\Core\Generator\Commands\TestSetupGenerator;
+use HiveApi\Core\Generator\Commands\TestSuiteConfigGenerator;
 use HiveApi\Core\Generator\Commands\TestSuiteTesterGenerator;
 use HiveApi\Core\Generator\Commands\TestTestCaseGenerator;
 use HiveApi\Core\Generator\Commands\TestUnitTestGenerator;
@@ -86,8 +86,8 @@ class GeneratorsServiceProvider extends ServiceProvider
             ServiceProviderGenerator::class,
             SubActionGenerator::class,
             TestFunctionalTestGenerator::class,
-            TestSuiteConfigGenerator::class,
             TestSetupGenerator::class,
+            TestSuiteConfigGenerator::class,
             TestSuiteTesterGenerator::class,
             TestTestCaseGenerator::class,
             TestUnitTestGenerator::class,
