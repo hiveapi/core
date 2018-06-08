@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Containers\{{container-name}}\Tests\Tests;
+
+use App\Ship\Parents\Tests\Tester\Tester;
+use App\Ship\Parents\Tests\Traits\AcceptanceTesterActions;
+
+class AcceptanceTester extends Tester
+{
+    use AcceptanceTesterActions;
+
+   /**
+    * Define custom methods for this tester here
+    */
+}

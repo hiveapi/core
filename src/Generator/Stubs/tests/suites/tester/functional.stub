@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Containers\{{container-name}}\Tests\Tests;
+
+use App\Ship\Parents\Tests\Tester\Tester;
+use App\Ship\Parents\Tests\Traits\FunctionalTesterActions;
+
+class FunctionalTester extends Tester
+{
+    use FunctionalTesterActions;
+
+   /**
+    * Define custom methods for this tester here
+    */
+}
