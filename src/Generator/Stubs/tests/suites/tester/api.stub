@@ -3,11 +3,13 @@
 namespace App\Containers\{{container-name}}\Tests\Tests;
 
 use App\Ship\Parents\Tests\Tester\Tester;
-use App\Ship\Parents\Tests\Traits\ApiTesterActions;
+use App\Ship\Parents\Tests\Traits\ApiTesterActions as ShipApiTesterActions;
+use HiveApi\Core\Abstracts\Tests\Traits\ApiTesterActions as CoreApiTesterActions;
 
 class ApiTester extends Tester
 {
-    use ApiTesterActions;
+    use CoreApiTesterActions;
+    use ShipApiTesterActions;
 
    /**
     * Define custom methods for this tester here
