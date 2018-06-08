@@ -72,7 +72,7 @@ class TestSuiteTestCaseGenerator extends GeneratorCommand implements ComponentsG
      */
     public function getUserInputs()
     {
-        $suite = Str::lower($this->checkParameterOrChoice('suite', 'Select the Test Suite you want to create the Test Case for.', ['ACCEPTANCE', 'API', 'FUNCTIONAL', 'UNIT']));
+        $suite = Str::lower($this->checkParameterOrChoice('suite', 'Select the Test Suite you want to create the Test Case for.', ['ACCEPTANCE', 'API', 'UNIT']));
 
         $this->stubName = 'tests/suites/tests/' . $suite . '.stub';
 

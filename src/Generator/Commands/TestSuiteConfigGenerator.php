@@ -72,7 +72,7 @@ class TestSuiteConfigGenerator extends GeneratorCommand implements ComponentsGen
      */
     public function getUserInputs()
     {
-        $suite = Str::lower($this->checkParameterOrChoice('suite', 'Select the Test Suite you want to create the Configuration for.', ['ACCEPTANCE', 'API', 'FUNCTIONAL', 'UNIT', 'CUSTOM']));
+        $suite = Str::lower($this->checkParameterOrChoice('suite', 'Select the Test Suite you want to create the Configuration for.', ['ACCEPTANCE', 'API', 'UNIT', 'CUSTOM']));
 
         $this->stubName = 'tests/suites/configs/' . $suite . '.stub';
 

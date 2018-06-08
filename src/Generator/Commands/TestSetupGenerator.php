@@ -76,7 +76,7 @@ class TestSetupGenerator extends GeneratorCommand implements ComponentsGenerator
         $containerName = $this->containerName;
         $_containerName = Str::lower($this->containerName);
 
-        $suites = ['acceptance', 'api', 'functional', 'unit'];
+        $suites = ['acceptance', 'api', 'unit'];
 
         foreach ($suites as $suite)
         {
