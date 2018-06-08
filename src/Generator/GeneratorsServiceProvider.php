@@ -11,6 +11,7 @@ use HiveApi\Core\Generator\Commands\ControllerGenerator;
 use HiveApi\Core\Generator\Commands\EventGenerator;
 use HiveApi\Core\Generator\Commands\EventHandlerGenerator;
 use HiveApi\Core\Generator\Commands\ExceptionGenerator;
+use HiveApi\Core\Generator\Commands\GitkeepGenerator;
 use HiveApi\Core\Generator\Commands\JobGenerator;
 use HiveApi\Core\Generator\Commands\MailGenerator;
 use HiveApi\Core\Generator\Commands\MigrationGenerator;
@@ -70,6 +71,7 @@ class GeneratorsServiceProvider extends ServiceProvider
             EventGenerator::class,
             EventHandlerGenerator::class,
             ExceptionGenerator::class,
+            GitkeepGenerator::class,
             JobGenerator::class,
             MailGenerator::class,
             MigrationGenerator::class,
