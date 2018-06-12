@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Facade;
  * Class Hive
  *
  * @author  Mahmoud Zalt  <mahmoud@zalt.me>
+ *
+ * @method static call($class, $runMethodArguments = [], $extraMethodsToCall = [])
+ * @method static transactionalCall($class, $runMethodArguments = [], $extraMethodsToCall = [])
+ *
+ * @see \HiveApi\Core\Foundation\Hive
  */
 class Hive extends Facade
 {
