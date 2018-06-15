@@ -17,7 +17,7 @@ class SeedTestingDataCommand extends ConsoleCommand
      *
      * @var string
      */
-    protected $signature = "hive:seed-test";
+    protected $signature = "hive:seed:test";
 
     /**
      * The console command description.
