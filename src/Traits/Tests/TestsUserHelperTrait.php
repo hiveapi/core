@@ -1,6 +1,6 @@
 <?php
 
-namespace HiveApi\Core\Abstracts\Tests\Cests\Traits;
+namespace HiveApi\Core\Traits\Tests;
 
 use App\Containers\User\Data\Repositories\UserRepository;
 use App\Containers\User\Models\User;
@@ -8,9 +8,16 @@ use Faker\Factory;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Hash;
 
-trait TestUserTrait
+trait TestsUserHelperTrait
 {
 
+    /**
+     * Returns a specific test user. If it does not exist, it creates a new user!
+     *
+     * @param array $data
+     *
+     * @return mixed
+     */
     protected function getTestingUser(array $data = [])
     {
         $repository = App::make(UserRepository::class);

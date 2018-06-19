@@ -2,12 +2,14 @@
 
 namespace HiveApi\Core\Abstracts\Tests\Cests;
 
-use HiveApi\Core\Abstracts\Tests\Cests\Traits\TestAuthenticationTrait;
-use HiveApi\Core\Abstracts\Tests\Cests\Traits\TestUserTrait;
+use HiveApi\Core\Traits\Tests\TestsAuthenticationHelperTrait;
+use HiveApi\Core\Traits\Tests\TestsResponseHelperTrait;
+use HiveApi\Core\Traits\Tests\TestsUserHelperTrait;
 
 abstract class BaseCest
 {
-    use TestAuthenticationTrait;
-    use TestUserTrait;
+    use TestsAuthenticationHelperTrait;
+    use TestsResponseHelperTrait;
+    use TestsUserHelperTrait;
 
 }

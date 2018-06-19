@@ -7,7 +7,11 @@ use Laravel\Passport\PersonalAccessClient;
 
 trait SetupPassportOAuth2Trait
 {
-    public function setupPassportOAuth2()
+    /**
+     * This function sets up Passport for testing purposes.
+     * Do not use this function in production mode as it may not be safe
+     */
+    protected function setupPassportOAuth2()
     {
         $client = (new ClientRepository())->createPersonalAccessClient(
             null,
