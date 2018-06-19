@@ -20,12 +20,15 @@ trait TestsUserHelperTrait
      */
     protected function getTestingUser(array $data = [])
     {
-        $repository = App::make(UserRepository::class);
-        $user = $repository->findWhere($data)->first();
+        if (! empty($data))
+        {
+            $repository = App::make(UserRepository::class);
+            $user = $repository->findWhere($data)->first();
 
-        // we found a user, so return it
-        if ($user) {
-            return $user;
+            // we found a user, so return it
+            if ($user) {
+                return $user;
+            }
         }
 
         // no user found, create a new user
