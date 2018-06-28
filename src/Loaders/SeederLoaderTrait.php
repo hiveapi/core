@@ -114,7 +114,7 @@ trait SeederLoaderTrait
     {
         $orderedSeederClasses = new Collection();
 
-        if (!$seedersClasses->isEmpty()) {
+        if (! $seedersClasses->isEmpty()) {
 
             foreach ($seedersClasses as $key => $seederFullClassName) {
                 // if the class full namespace contain "_" it means it needs to be seeded in order

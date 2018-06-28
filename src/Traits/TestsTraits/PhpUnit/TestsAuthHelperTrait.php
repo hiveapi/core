@@ -134,7 +134,7 @@ trait TestsAuthHelperTrait
         ];
 
         // if no user detail provided, use the default details, to find the password or generate one before encoding it
-        return $this->prepareUserPassword($userDetails ? : $defaultUserDetails);;
+        return $this->prepareUserPassword($userDetails ? : $defaultUserDetails);
     }
 
     /**

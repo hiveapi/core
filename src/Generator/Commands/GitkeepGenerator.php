@@ -4,7 +4,6 @@ namespace HiveApi\Core\Generator\Commands;
 
 use HiveApi\Core\Generator\GeneratorCommand;
 use HiveApi\Core\Generator\Interfaces\ComponentsGenerator;
-use Illuminate\Support\Pluralizer;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
 

@@ -2,7 +2,6 @@
 
 namespace HiveApi\Core\Loaders;
 
-use App;
 use Illuminate\Contracts\Http\Kernel;
 
 /**

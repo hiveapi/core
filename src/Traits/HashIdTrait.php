@@ -240,7 +240,7 @@ trait HashIdTrait
         if (Config::get('hive.hash-id')) {
             Route::bind('id', function ($id, $route) {
                 // skip decoding some endpoints
-                if (!in_array($route->uri(), $this->skippedEndpoints)) {
+                if (! in_array($route->uri(), $this->skippedEndpoints)) {
 
                     // decode the ID in the URL
                     $decoded = $this->decoder($id);

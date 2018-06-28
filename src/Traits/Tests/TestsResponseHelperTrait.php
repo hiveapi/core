@@ -16,6 +16,18 @@ trait TestsResponseHelperTrait
      */
     protected function getResponseContentObject($response)
     {
-        return json_decode($response);
+        return json_decode($response, false);
+    }
+
+    /**
+     * Converts a simple Response to an array
+     *
+     * @param $response
+     *
+     * @return array
+     */
+    protected function getResponseContentArray($response)
+    {
+        return json_decode($response, true);
     }
 }
