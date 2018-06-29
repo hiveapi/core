@@ -16,7 +16,7 @@ trait TestsStubHelperTrait
      *
      * @return mixed|string
      */
-    public function loadAndPrepareStub($fileName, array $vars = [], $startPattern = '{{', $endPattern = '}}')
+    protected function loadAndPrepareStub($fileName, array $vars = [], $startPattern = '{{', $endPattern = '}}')
     {
         // repeat our patterns
         $startPatterns = array_fill(0, count($vars), $startPattern);
