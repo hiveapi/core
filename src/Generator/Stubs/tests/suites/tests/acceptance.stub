@@ -20,11 +20,15 @@ class {{class-name}}Cest extends BaseCest
     }
 
     /**
+     * @test
+     *
      * @param AcceptanceTester $I
      */
     public function test_something(AcceptanceTester $I)
     {
-        $I->amOnPage('/');
+        $endpoint = '/';
+
+        $I->amOnPage($endpoint);
 
         $I->assertEquals(true, true);
     }

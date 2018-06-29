@@ -26,8 +26,10 @@ class {{class-name}}Cest extends BaseCest
      */
     public function test_something(ApiTester $I)
     {
+        $endpoint = '/';
+
         $I->haveHttpHeader('accept', 'application/json');
-        $I->sendGET('/');
+        $I->sendGET($endpoint);
 
         $I->seeResponseCodeIs(200);
     }
