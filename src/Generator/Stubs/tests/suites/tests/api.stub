@@ -26,7 +26,8 @@ class {{class-name}}Cest extends BaseCest
      */
     public function test_something(ApiTester $I)
     {
-        $endpoint = '/';
+        // the route to be accessed (via route name)
+        $endpoint = route('');
 
         $I->haveHttpHeader('accept', 'application/json');
         $I->sendGET($endpoint);

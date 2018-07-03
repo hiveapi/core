@@ -26,7 +26,7 @@ class {{class-name}}Cest extends BaseCest
      */
     public function test_something(AcceptanceTester $I)
     {
-        $endpoint = '/';
+        $endpoint = 'https://';
 
         $I->amOnPage($endpoint);
 
