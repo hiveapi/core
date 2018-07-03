@@ -95,7 +95,7 @@ class TestSetupGenerator extends GeneratorCommand implements ComponentsGenerator
             $this->call('hive:generate:misc:gitkeep', [
                 '--container'   => $containerName,
                 '--file'        => $testerName,
-                '--path'        => '/Tests/Tests/' . $suite . '/',
+                '--path'        => '/Tests/Tests/' . Str::ucfirst($suite) . '/',
             ]);
 
         }
