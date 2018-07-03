@@ -3,6 +3,8 @@
 namespace HiveApi\Core\Traits;
 
 use Fractal;
+use HiveApi\Core\Abstracts\Transformers\Transformer;
+use HiveApi\Core\Exceptions\InvalidTransformerException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Pagination\AbstractPaginator;
 use Illuminate\Support\Collection;
@@ -24,12 +26,13 @@ trait ResponseTrait
 
     /**
      * @param       $data
-     * @param null  $transformerName
-     * @param array $includes
-     * @param array $meta
-     * @param null  $resourceKey
+     * @param null  $transformerName The transformer to be applied (i.e., MyTransformer::class or new MyTransformer())
+     * @param array $includes        additional resource relationships to be included
+     * @param array $meta            additional meta information to be applied
+     * @param null  $resourceKey     the resource key for the top level resource
      *
      * @return array
+     * @throws InvalidTransformerException
      */
     public function transform(
         $data,
@@ -38,8 +41,19 @@ trait ResponseTrait
         array $meta = [],
         $resourceKey = null
     ) {
-        // create instance of the transformer
-        $transformer = new $transformerName;
+        // first, we need to create the transformer
+        if ($transformerName instanceof Transformer) {
+            // check, if we have provided a respective TRANSFORMER class
+            $transformer = $transformerName;
+        }
+        else {
+            // of if we just passed the classname
+            $transformer = new $transformerName;
+        }
+        // now, finally check, if the class is really a TRANSFORMER
+        if (! ($transformer instanceof Transformer)) {
+            throw new InvalidTransformerException();
+        }
 
         // append the includes from the transform() to the defaultIncludes
         $includes = array_unique(array_merge($transformer->getDefaultIncludes(), $includes));
