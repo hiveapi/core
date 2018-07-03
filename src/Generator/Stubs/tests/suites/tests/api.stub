@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Containers\{{container-name}}\Tests\Tests;
+namespace App\Containers\{{container-name}}\Tests\Tests\Api;
 
 use App\Containers\{{container-name}}\Tests\Tests\ApiTester;
 use App\Ship\Parents\Tests\Cests\BaseCest;
