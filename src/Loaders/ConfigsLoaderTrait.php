@@ -27,9 +27,9 @@ trait ConfigsLoaderTrait
      */
     public function loadConfigsFromShip()
     {
-        $portConfigsDirectory = base_path('app/Ship/Configs');
+        $shipConfigsDirectory = base_path('app/Ship/Configs');
 
-        $this->loadConfigs($portConfigsDirectory);
+        $this->loadConfigs($shipConfigsDirectory);
     }
 
     /**

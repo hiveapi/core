@@ -60,7 +60,6 @@ trait ConsolesLoaderTrait
                     $this->commands([$consoleClass]);
                 }
             }
-
         }
     }
 

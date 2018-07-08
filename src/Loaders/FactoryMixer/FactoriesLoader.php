@@ -4,7 +4,7 @@
  * This files acts as the single factory php file of all the application.
  * Inside this file I am including every factory file found int he application.
  *
- * This currently only load factories from containers not form the port as it's not necessary yet!
+ * This currently only load factories from containers not form the ship as it is not necessary yet!
  */
 
 use HiveApi\Core\Foundation\Facades\Hive;
@@ -34,6 +34,5 @@ foreach (Hive::getContainersNames() as $containerName) {
             }
         }
     }
-
 }
 
