@@ -1,12 +1,17 @@
 <?php
 
-class SanitizerTest extends \Codeception\Test\Unit
-{
-    /**
-     * @var \UnitTester
-     */
-    protected $tester;
+namespace HiveApi\CoreTest\Tests\Unit;
 
+use HiveApi\Core\Abstracts\Tests\Cests\BaseCest;
+use HiveApi\CoreTest\Models\SanitizerTest\TestTransporter;
+use HiveApi\CoreTest\Tests\UnitTester;
+
+/**
+ * @group core
+ * @group unit
+ */
+class SanitizerTestCest extends BaseCest
+{
     private $testdata = [
         'data' => [
             'name' => 'John',
@@ -26,80 +31,94 @@ class SanitizerTest extends \Codeception\Test\Unit
     /** @var  \HiveApi\Core\Abstracts\Transporters\Transporter */
     private $transporter;
 
-    protected function _before()
+    public function _before()
     {
-        $this->transporter = new \HiveApi\CoreTest\Models\SanitizerTest\TestTransporter($this->testdata);
+        $this->transporter = new TestTransporter($this->testdata);
     }
 
-    protected function _after()
+    public function _after()
     {
     }
 
     /**
      * @test
+     *
+     * @param UnitTester $I
      */
-    public function checkInputByKeys()
+    public function checkInputByKeys(UnitTester $I)
     {
         $name = $this->transporter->getInputByKey('data.name');
-        $this->tester->assertEquals($this->testdata['data']['name'], $name);
+        $I->assertEquals($this->testdata['data']['name'], $name);
     }
 
     /**
      * @test
+     *
+     * @param UnitTester $I
      */
-    public function checkInputByKeysWithUnknownKey()
+    public function checkInputByKeysWithUnknownKey(UnitTester $I)
     {
         $unknown = $this->transporter->getInputByKey('data.unknown.key');
-        $this->tester->assertNull($unknown);
+        $I->assertNull($unknown);
     }
 
     /**
      * @test
+     *
+     * @param UnitTester $I
      */
-    public function checkInputByKeyWithDefaultValue()
+    public function checkInputByKeyWithDefaultValue(UnitTester $I)
     {
         $default = $this->transporter->getInputByKey('data.unknown.key', 'default');
-        $this->tester->assertEquals('default', $default);
+        $I->assertEquals('default', $default);
     }
 
     /**
      * @test
+     *
+     * @param UnitTester $I
      */
-    public function checkInputByKeyWithArray()
+    public function checkInputByKeyWithArray(UnitTester $I)
     {
         $items = $this->transporter->getInputByKey('data.items');
-        $this->tester->assertEquals(count($this->testdata['data']['items']), count($items));
+        $I->assertEquals(count($this->testdata['data']['items']), count($items));
     }
 
     /**
      * @test
+     *
+     * @param UnitTester $I
      */
-    public function sanitizeData()
+    public function sanitizeData(UnitTester $I)
     {
         $data = $this->transporter->sanitizeInput(['data']);
         $data = $data['data'];
 
-        $this->tester->assertEquals($this->testdata['data'], $data);
+        $I->assertEquals($this->testdata['data'], $data);
     }
 
     /**
      * @test
+     *
+     * @param UnitTester $I
      */
-    public function sanitizeUnknownKeys()
+    public function sanitizeUnknownKeys(UnitTester $I)
     {
         $data = $this->transporter->sanitizeInput([
             'data.unknown.key',
             'meta.article.author',
         ]);
 
-        $this->tester->assertEmpty($data['data']);
-        $this->tester->assertEmpty($data['meta']);
+        $I->assertEmpty($data['data']);
+        $I->assertEmpty($data['meta']);
     }
 
     /**
      * @test
+     *
+     * @param UnitTester $I
      */
-    public function sanitizeDataByKeys()
+    public function sanitizeDataByKeys(UnitTester $I)
     {
         $data = $this->transporter->sanitizeInput([
             'data.name',
@@ -108,19 +127,21 @@ class SanitizerTest extends \Codeception\Test\Unit
         ]);
         $data = $data['data'];
 
-        $this->tester->assertEquals($this->testdata['data'], $data);
+        $I->assertEquals($this->testdata['data'], $data);
     }
 
     /**
      * @test
+     *
+     * @param UnitTester $I
      */
-    public function sanitizeItems()
+    public function sanitizeItems(UnitTester $I)
     {
         $data = $this->transporter->sanitizeInput([
             'data.items'
         ]);
         $data = $data['data']['items'];
 
-        $this->tester->assertEquals($this->testdata['data']['items'], $data);
+        $I->assertEquals($this->testdata['data']['items'], $data);
     }
 }

@@ -1,5 +1,5 @@
 <?php
-
+namespace HiveApi\CoreTest\Tests;
 
 /**
  * Inherited Methods

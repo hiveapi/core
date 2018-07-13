@@ -29,6 +29,10 @@
     "dto/dto": "^3.2"
   },
   "require-dev": {
+    "fzaninotto/faker": "~1.4",
+    "mockery/mockery": "0.9.*",
+    "codeception/codeception": "~2.4",
+    "flow/jsonpath" : "^0.4"
   },
   "autoload": {
     "psr-4": {
@@ -37,6 +41,7 @@
   },
   "autoload-dev": {
     "psr-4": {
+      "HiveApi\\CoreTest\\" : "tests/"
     }
   },
   "minimum-stability": "dev",
