@@ -26,6 +26,16 @@ trait TestsUserHelperTrait
         return $user;
     }
 
+    /**
+     * Loads an existing User from the database.
+     *
+     * @param array $data
+     */
+    protected function getExistingUser(array $data = [])
+    {
+        return User::where($data)->first();
+    }
+
     private function createTestingUser(array $userdata = [])
     {
         return factory(User::class)->create($this->prepareUserDetails($userdata));
