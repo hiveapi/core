@@ -12,7 +12,7 @@ use HiveApi\Core\Foundation\Facades\Hive;
 trait AutoLoaderTrait
 {
 
-    // using each component loader trait
+    // use each component loader trait
     use ConfigsLoaderTrait;
     use LocalizationLoaderTrait;
     use MigrationsLoaderTrait;
@@ -22,7 +22,7 @@ trait AutoLoaderTrait
     use AliasesLoaderTrait;
 
     /**
-     * * to be used from the `boot` function of the main service provider
+     * used from the `boot` function of the main service provider
      */
     public function runLoadersBoot()
     {
@@ -32,7 +32,7 @@ trait AutoLoaderTrait
         $this->loadViewsFromShip();
         $this->loadConsolesFromShip();
 
-        // > iterate over all the containers folders and autoload most of the components
+        // iterate over all the containers folders and autoload most of the components
         foreach (Hive::getContainersNames() as $containerName) {
             $this->loadConfigsFromContainers($containerName);
             $this->loadLocalsFromContainers($containerName);
