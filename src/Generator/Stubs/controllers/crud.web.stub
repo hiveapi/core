@@ -26,7 +26,7 @@ class {{class-name}} extends WebController
      */
     public function index(GetAll{{models}}Request $request)
     {
-        ${{entities}} = Hive::call('{{container-name}}@GetAll{{models}}Action', [$request]);
+        ${{entities}} = Hive::call('{{container-name}}@GetAll{{models}}Action', [$request->toTransformer()]);
 
         // ..
     }
@@ -38,7 +38,7 @@ class {{class-name}} extends WebController
      */
     public function show(Find{{model}}ByIdRequest $request)
     {
-        ${{entity}} = Hive::call('{{container-name}}@Find{{model}}ByIdAction', [$request]);
+        ${{entity}} = Hive::call('{{container-name}}@Find{{model}}ByIdAction', [$request->toTransformer()]);
 
         // ..
     }
@@ -60,7 +60,7 @@ class {{class-name}} extends WebController
      */
     public function store(Store{{model}}Request $request)
     {
-        ${{entity}} = Hive::call('{{container-name}}@Create{{model}}Action', [$request]);
+        ${{entity}} = Hive::call('{{container-name}}@Create{{model}}Action', [$request->toTransformer()]);
 
         // ..
     }
@@ -72,7 +72,7 @@ class {{class-name}} extends WebController
      */
     public function edit(Edit{{model}}Request $request)
     {
-        ${{entity}} = Hive::call('{{container-name}}@Get{{model}}ByIdAction', [$request]);
+        ${{entity}} = Hive::call('{{container-name}}@Get{{model}}ByIdAction', [$request->toTransformer()]);
 
         // ..
     }
@@ -84,7 +84,7 @@ class {{class-name}} extends WebController
      */
     public function update(Update{{model}}Request $request)
     {
-        ${{entity}} = Hive::call('{{container-name}}@Update{{model}}Action', [$request]);
+        ${{entity}} = Hive::call('{{container-name}}@Update{{model}}Action', [$request->toTransformer()]);
 
         // ..
     }
@@ -96,7 +96,7 @@ class {{class-name}} extends WebController
      */
     public function delete(Delete{{model}}Request $request)
     {
-         $result = Hive::call('{{container-name}}@Delete{{model}}Action', [$request]);
+         $result = Hive::call('{{container-name}}@Delete{{model}}Action', [$request->toTransformer()]);
 
          // ..
     }

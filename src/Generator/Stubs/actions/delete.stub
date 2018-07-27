@@ -3,13 +3,13 @@
 namespace App\Containers\{{container-name}}\Actions;
 
 use App\Ship\Parents\Actions\Action;
-use App\Ship\Parents\Requests\Request;
+use App\Ship\Parents\Transporters\Transporter;
 use HiveApi\Core\Foundation\Facades\Hive;
 
 class Delete{{model}}Action extends Action
 {
-    public function run(Request $request)
+    public function run(Transporter $transporter)
     {
-        return Hive::call('{{container-name}}@Delete{{model}}Task', [$request->id]);
+        return Hive::call('{{container-name}}@Delete{{model}}Task', [$transporter->id]);
     }
 }

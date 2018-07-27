@@ -24,7 +24,7 @@ class {{class-name}} extends {{base-controller}}
      */
     public function create{{model}}(Create{{model}}Request $request)
     {
-        ${{entity}} = Hive::call('{{container-name}}@Create{{model}}Action', [$request]);
+        ${{entity}} = Hive::call('{{container-name}}@Create{{model}}Action', [$request->toTransformer()]);
 
         return $this->created($this->transform(${{entity}}, {{model}}Transformer::class));
     }
@@ -35,7 +35,7 @@ class {{class-name}} extends {{base-controller}}
      */
     public function find{{model}}ById(Find{{model}}ByIdRequest $request)
     {
-        ${{entity}} = Hive::call('{{container-name}}@Find{{model}}ByIdAction', [$request]);
+        ${{entity}} = Hive::call('{{container-name}}@Find{{model}}ByIdAction', [$request->toTransformer()]);
 
         return $this->transform(${{entity}}, {{model}}Transformer::class);
     }
@@ -46,7 +46,7 @@ class {{class-name}} extends {{base-controller}}
      */
     public function getAll{{models}}(GetAll{{models}}Request $request)
     {
-        ${{entities}} = Hive::call('{{container-name}}@GetAll{{models}}Action', [$request]);
+        ${{entities}} = Hive::call('{{container-name}}@GetAll{{models}}Action', [$request->toTransformer()]);
 
         return $this->transform(${{entities}}, {{model}}Transformer::class);
     }
@@ -57,7 +57,7 @@ class {{class-name}} extends {{base-controller}}
      */
     public function update{{model}}(Update{{model}}Request $request)
     {
-        ${{entity}} = Hive::call('{{container-name}}@Update{{model}}Action', [$request]);
+        ${{entity}} = Hive::call('{{container-name}}@Update{{model}}Action', [$request->toTransformer()]);
 
         return $this->transform(${{entity}}, {{model}}Transformer::class);
     }
@@ -68,7 +68,7 @@ class {{class-name}} extends {{base-controller}}
      */
     public function delete{{model}}(Delete{{model}}Request $request)
     {
-        Hive::call('{{container-name}}@Delete{{model}}Action', [$request]);
+        Hive::call('{{container-name}}@Delete{{model}}Action', [$request->toTransformer()]);
 
         return $this->noContent();
     }
