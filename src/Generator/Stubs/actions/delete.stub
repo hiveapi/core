@@ -2,6 +2,8 @@
 
 namespace App\Containers\{{container-name}}\Actions;
 
+use App\Containers\{{container-name}}\Tasks\Delete{{model}}Task;
+use App\Containers\{{container-name}}\Tasks\Find{{model}}ByIdTask;
 use App\Ship\Parents\Actions\Action;
 use App\Ship\Parents\Transporters\Transporter;
 use HiveApi\Core\Foundation\Facades\Hive;
@@ -10,8 +12,8 @@ class Delete{{model}}Action extends Action
 {
     public function run(Transporter $transporter)
     {
-        ${{entity}} = Hive::call('{{container-name}}@Find{{model}}ByIdTask', [$transporter->id]);
+        ${{entity}} = Hive::call(Find{{model}}ByIdTask::class, [$transporter->id]);
 
-        return Hive::call('{{container-name}}@Delete{{model}}Task', [${{entity}}]);
+        return Hive::call(Delete{{model}}Task::class, [${{entity}}]);
     }
 }

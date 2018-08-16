@@ -2,6 +2,7 @@
 
 namespace App\Containers\{{container-name}}\Actions;
 
+use App\Containers\{{container-name}}\Tasks\GetAll{{model}}Task;
 use App\Ship\Parents\Actions\Action;
 use App\Ship\Parents\Transporters\Transporter;
 use HiveApi\Core\Foundation\Facades\Hive;
@@ -10,7 +11,7 @@ class GetAll{{models}}Action extends Action
 {
     public function run(Transporter $transporter)
     {
-        ${{entities}} = Hive::call('{{container-name}}@GetAll{{models}}Task', [], ['addRequestCriteria']);
+        ${{entities}} = Hive::call(GetAll{{models}}Task::class, [], ['addRequestCriteria']);
 
         return ${{entities}};
     }

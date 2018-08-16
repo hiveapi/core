@@ -2,6 +2,7 @@
 
 namespace App\Containers\{{container-name}}\Actions;
 
+use App\Containers\{{container-name}}\Tasks\Find{{model}}ByIdTask;
 use App\Ship\Parents\Actions\Action;
 use App\Ship\Parents\Transporters\Transporter;
 use HiveApi\Core\Foundation\Facades\Hive;
@@ -10,7 +11,7 @@ class Find{{model}}ByIdAction extends Action
 {
     public function run(Transporter $transporter)
     {
-        ${{entity}} = Hive::call('{{container-name}}@Find{{model}}ByIdTask', [$transporter->id]);
+        ${{entity}} = Hive::call(Find{{model}}ByIdTask::class, [$transporter->id]);
 
         return ${{entity}};
     }

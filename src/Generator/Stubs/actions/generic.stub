@@ -9,6 +9,6 @@ class {{class-name}} extends Action
 {
     public function run()
     {
-        // $var = Hive::call('Container@Task', [$arg1, $arg2, ...]);
+        // $var = Hive::call(YourCustomTask::class, [$arg1, $arg2, ...]);
     }
 }

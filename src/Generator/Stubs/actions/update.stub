@@ -2,6 +2,8 @@
 
 namespace App\Containers\{{container-name}}\Actions;
 
+use App\Containers\{{container-name}}\Tasks\Find{{model}}ByIdTask;
+use App\Containers\{{container-name}}\Tasks\Update{{model}}Task;
 use App\Ship\Parents\Actions\Action;
 use App\Ship\Parents\Transporters\Transporter;
 use HiveApi\Core\Foundation\Facades\Hive;
@@ -10,13 +12,13 @@ class Update{{model}}Action extends Action
 {
     public function run(Transporter $transporter)
     {
-        ${{entity}} = Hive::call('{{container-name}}@Find{{model}}ByIdTask', [$transporter->id]);
+        ${{entity}} = Hive::call(Find{{model}}ByIdTask::class, [$transporter->id]);
 
         $data = $transporter->sanitizeInput([
             // add your request data here
         ]);
 
-        ${{entity}} = Hive::call('{{container-name}}@Update{{model}}Task', [${{entity}}, $data]);
+        ${{entity}} = Hive::call(Update{{model}}Task::class, [${{entity}}, $data]);
 
         return ${{entity}};
     }

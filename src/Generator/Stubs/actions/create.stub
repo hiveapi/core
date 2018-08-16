@@ -2,6 +2,7 @@
 
 namespace App\Containers\{{container-name}}\Actions;
 
+use App\Containers\{{container-name}}\Tasks\Create{{model}}Task;
 use App\Ship\Parents\Actions\Action;
 use App\Ship\Parents\Transporters\Transporter;
 use HiveApi\Core\Foundation\Facades\Hive;
@@ -14,7 +15,7 @@ class Create{{model}}Action extends Action
             // add your request data here
         ]);
 
-        ${{entity}} = Hive::call('{{container-name}}@Create{{model}}Task', [$data]);
+        ${{entity}} = Hive::call(Create{{model}}Task::class, [$data]);
 
         return ${{entity}};
     }
