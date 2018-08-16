@@ -7,7 +7,7 @@ namespace HiveApi\Core\Abstracts\Events\Interfaces;
  *
  * @author  Arthur Devious
  */
-interface ShouldHandleNow extends ShouldHandle
+interface ShouldHandleNow
 {
-
+    public function handle();
 }

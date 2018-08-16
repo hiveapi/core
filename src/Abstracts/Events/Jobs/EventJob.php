@@ -4,14 +4,21 @@ namespace HiveApi\Core\Abstracts\Events\Jobs;
 
 use HiveApi\Core\Abstracts\Events\Interfaces\ShouldHandle;
 use HiveApi\Core\Abstracts\Jobs\Job;
+use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
 
 /**
  * Class EventJob
  *
  * @author  Arthur Devious
  */
-class EventJob extends Job
+class EventJob extends Job implements ShouldQueue
 {
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
     public $handler;
 
     /**
@@ -19,7 +26,6 @@ class EventJob extends Job
      *
      * @param \HiveApi\Core\Abstracts\Events\Interfaces\ShouldHandle $handler
      */
-
     public function __construct(ShouldHandle $handler)
     {
         $this->handler = $handler;
