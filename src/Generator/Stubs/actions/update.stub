@@ -10,11 +10,13 @@ class Update{{model}}Action extends Action
 {
     public function run(Transporter $transporter)
     {
+        ${{entity}} = Hive::call('{{container-name}}@Find{{model}}ByIdTask', [$transporter->id]);
+
         $data = $transporter->sanitizeInput([
             // add your request data here
         ]);
 
-        ${{entity}} = Hive::call('{{container-name}}@Update{{model}}Task', [$transporter->id, $data]);
+        ${{entity}} = Hive::call('{{container-name}}@Update{{model}}Task', [${{entity}}, $data]);
 
         return ${{entity}};
     }

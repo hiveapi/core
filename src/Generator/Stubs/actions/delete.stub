@@ -10,6 +10,8 @@ class Delete{{model}}Action extends Action
 {
     public function run(Transporter $transporter)
     {
-        return Hive::call('{{container-name}}@Delete{{model}}Task', [$transporter->id]);
+        ${{entity}} = Hive::call('{{container-name}}@Find{{model}}ByIdTask', [$transporter->id]);
+
+        return Hive::call('{{container-name}}@Delete{{model}}Task', [${{entity}}]);
     }
 }
